@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SignUpActivity"
+    android:background="@drawable/money1">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8151414"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loginTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="SIGN UP"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_32font_mdp"
+        app:layout_constraintBottom_toTopOf="@+id/loginIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23000002"
+
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loginIcon"
+        android:layout_width="@dimen/_75mdp"
+        android:layout_height="@dimen/_75mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        app:lottie_rawRes="@raw/creaccount"
+        app:lottie_autoPlay="true"
+        app:layout_constraintBottom_toTopOf="@+id/nameBox"
+        app:layout_constraintEnd_toEndOf="@id/loginTxt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/loginTxt"
+        app:layout_constraintTop_toBottomOf="@+id/loginTxt" />
+
+    <EditText
+        android:id="@+id/nameBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginStart="@dimen/_10mdp"
+        android:layout_marginTop="@dimen/_15mdp"
+        android:layout_marginEnd="@dimen/_10mdp"
+        android:background="@drawable/edit_box"
+        android:hint="Full Name"
+        android:drawablePadding="@dimen/_10mdp"
+        android:drawableLeft="@drawable/ic_name"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:padding="@dimen/_10mdp"
+        android:paddingStart="@dimen/_10mdp"
+        android:textColorHint="@color/hint_color"
+        android:textSize="@dimen/_11font_mdp"
+        app:layout_constraintBottom_toTopOf="@id/emailBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginIcon" />
+
+    <EditText
+        android:id="@+id/emailBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:background="@drawable/edit_box"
+        android:hint="Email Address"
+        android:padding="@dimen/_10mdp"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:paddingStart="@dimen/_10mdp"
+        android:drawableLeft="@drawable/emailfornew"
+        android:drawablePadding="@dimen/_10mdp"
+        android:textColorHint="@color/hint_color"
+        android:textSize="@dimen/_11font_mdp"
+        app:layout_constraintBottom_toTopOf="@id/passwordBox"
+        app:layout_constraintEnd_toEndOf="@id/nameBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/nameBox"
+        app:layout_constraintTop_toBottomOf="@id/nameBox" />
+
+    <EditText
+        android:id="@+id/passwordBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:background="@drawable/edit_box"
+        android:hint="Password"
+        android:padding="@dimen/_10mdp"
+        android:paddingStart="@dimen/_10mdp"
+        android:drawablePadding="@dimen/_10mdp"
+        android:drawableLeft="@drawable/passwordfornew"
+        android:inputType="textPassword"
+        android:textColorHint="@color/hint_color"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11font_mdp"
+        app:layout_constraintBottom_toTopOf="@id/referBox"
+        app:layout_constraintEnd_toEndOf="@id/emailBox"
+        app:layout_constraintStart_toStartOf="@id/emailBox"
+        app:layout_constraintTop_toBottomOf="@id/emailBox" />
+
+    <EditText
+        android:id="@+id/referBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_35mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:background="@drawable/edit_box"
+        android:hint="Refer Code (Optional)"
+        android:padding="@dimen/_10mdp"
+        android:paddingStart="@dimen/_10mdp"
+        android:inputType="phone"
+        android:drawableLeft="@drawable/refferfornew"
+        android:drawablePadding="@dimen/_10mdp"
+        android:textColorHint="@color/hint_color"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11font_mdp"
+        app:layout_constraintBottom_toTopOf="@id/loginId"
+        app:layout_constraintEnd_toEndOf="@id/passwordBox"
+        app:layout_constraintStart_toStartOf="@id/passwordBox"
+        app:layout_constraintTop_toBottomOf="@id/passwordBox" />
+
+
+    <Button
+        android:id="@+id/loginId"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_38mdp"
+        android:layout_marginTop="@dimen/_28mdp"
+        android:background="@drawable/log_btn"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/referBox"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/referBox"
+        app:layout_constraintTop_toBottomOf="@id/referBox" />
+
+    <TextView
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/login"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/_5mdp"
+        android:fontFamily="@font/roboto_bold"
+        android:layout_marginTop="@dimen/_7mdp"
+        app:layout_constraintTop_toBottomOf="@id/loginId" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:fontFamily="@font/roboto_bold"
+        android:textColor="#FFC107"
+        app:layout_constraintBottom_toBottomOf="@id/create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/create"
+        app:layout_constraintTop_toTopOf="@id/create" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="By signing up you are agreeing to our terms of service"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_9font_mdp"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintVertical_bias="0.93" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

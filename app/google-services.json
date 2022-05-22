@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "239208250218",
+    "project_id": "earnmytaka",
+    "storage_bucket": "earnmytaka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239208250218:android:60f0c8b35bc9fcb3e7c313",
+        "android_client_info": {
+          "package_name": "com.manuni.earnwithquiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239208250218-p07avc3es4192l1t6cvo1ji4gov470gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv31AkkZpODTUsJyXzkLVEbY-1eDeEnPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239208250218-p07avc3es4192l1t6cvo1ji4gov470gr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

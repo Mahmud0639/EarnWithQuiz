@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".activities.ResultScreenActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/imageView6"
+        android:layout_width="@dimen/_150mdp"
+        android:layout_height="@dimen/_150mdp"
+        android:layout_marginTop="@dimen/_18mdp"
+        app:lottie_rawRes="@raw/trophy"
+        app:lottie_autoPlay="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo17" />
+
+    <TextView
+        android:id="@+id/congats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13mdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/congratulations"
+        android:textColor="@color/green"
+        android:textSize="@dimen/_22font_mdp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_13mdp"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/your_score"
+        android:textSize="@dimen/_14font_mdp"
+        app:layout_constraintEnd_toEndOf="@+id/congats"
+        app:layout_constraintStart_toStartOf="@+id/congats"
+        app:layout_constraintTop_toBottomOf="@+id/congats" />
+
+    <TextView
+        android:id="@+id/scores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_11mdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/eightbyten"
+        android:textColor="@color/orange_color"
+        android:textSize="@dimen/_18font_mdp"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18mdp"
+        android:fontFamily="@font/roboto_light"
+        android:text="@string/earned_coins"
+        android:textSize="@dimen/_15font_mdp"
+        app:layout_constraintEnd_toEndOf="@+id/scores"
+        app:layout_constraintStart_toStartOf="@+id/scores"
+        app:layout_constraintTop_toBottomOf="@+id/scores" />
+
+    <TextView
+        android:id="@+id/earnedCoins"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5mdp"
+        android:drawablePadding="@dimen/_7mdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/fivehundred"
+        android:textColor="@color/red"
+        android:textSize="@dimen/_25font_mdp"
+        app:layout_constraintEnd_toEndOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13"
+        app:drawableLeftCompat="@drawable/ic_dollar" />
+
+    <Button
+        android:id="@+id/shareBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mdp"
+        android:layout_marginLeft="@dimen/_18mdp"
+        android:layout_marginTop="@dimen/_18mdp"
+        android:layout_marginEnd="@dimen/_5mdp"
+        android:layout_marginRight="@dimen/_5mdp"
+        android:background="@drawable/send_req_btn_bg"
+        android:drawableLeft="@drawable/ic_share"
+        android:paddingLeft="@dimen/_12mdp"
+        android:text="@string/share"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/restartBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/earnedCoins"
+        android:drawableStart="@drawable/ic_share"
+        android:paddingStart="@dimen/_8mdp"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/restartBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5mdp"
+        android:layout_marginLeft="@dimen/_5mdp"
+        android:layout_marginTop="@dimen/_18mdp"
+        android:layout_marginEnd="@dimen/_18mdp"
+        android:layout_marginRight="@dimen/_18mdp"
+        android:background="@drawable/spin_button_bg"
+        android:text="@string/restart"
+        android:paddingLeft="@dimen/_12mdp"
+        android:drawableLeft="@drawable/ic_restart"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/shareBtn"
+        app:layout_constraintTop_toBottomOf="@+id/earnedCoins" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>

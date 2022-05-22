@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.ProfileFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="@dimen/_90mdp"
+        android:layout_height="@dimen/_90mdp"
+        android:layout_marginTop="@dimen/_40mdp"
+        android:src="@drawable/avatar"
+        app:civ_border_color="@color/background_2_start"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/myName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/profile_image"
+        app:layout_constraintStart_toStartOf="@id/profile_image"
+        app:layout_constraintEnd_toEndOf="@id/profile_image"
+        android:layout_marginTop="@dimen/_13mdp"
+        android:textSize="@dimen/_14font_mdp"
+        android:fontFamily="@font/roboto_bold"/>
+
+    <EditText
+        android:id="@+id/profileNameBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mdp"
+        android:layout_marginLeft="@dimen/_18mdp"
+        android:layout_marginTop="@dimen/_42mdp"
+        android:layout_marginEnd="@dimen/_18mdp"
+        android:layout_marginRight="@dimen/_18mdp"
+        android:background="@drawable/textbox"
+        android:textColorHint="@color/hint_color"
+        android:drawableLeft="@drawable/ic_user"
+        android:drawablePadding="@dimen/_10mdp"
+        android:textColor="@color/black"
+        android:ems="10"
+        android:hint="@string/enter_your_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/_8mdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        android:drawableStart="@drawable/ic_user"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/profileBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mdp"
+        android:layout_marginLeft="@dimen/_18mdp"
+        android:layout_marginTop="@dimen/_25mdp"
+        android:layout_marginEnd="@dimen/_18mdp"
+        android:layout_marginRight="@dimen/_18mdp"
+        android:background="@drawable/send_req_btn_bg"
+        android:fontFamily="@font/roboto_bold"
+        android:padding="@dimen/_10mdp"
+        android:text="@string/update_profile"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileNameBox"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <ImageView
+        android:id="@+id/profilePlus"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:contentDescription="@string/todo8"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintEnd_toEndOf="@+id/profile_image"
+        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintBottom_toBottomOf="@id/profile_image"
+        app:layout_constraintStart_toStartOf="@+id/profile_image"
+       />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
