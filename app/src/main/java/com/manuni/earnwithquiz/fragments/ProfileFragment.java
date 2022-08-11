@@ -6,6 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -21,7 +24,9 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.manuni.earnwithquiz.customdialogs.CustomProgressingProfile;
 import com.manuni.earnwithquiz.R;
 import com.manuni.earnwithquiz.models.User;
@@ -76,6 +81,8 @@ public class  ProfileFragment extends Fragment {
             intent.setType("image/*");
             startActivityForResult(intent,32);
         });
+
+
         binding.profileBtn.setOnClickListener(v -> {
             if (binding.profileNameBox.getText().toString().isEmpty()) {
 
@@ -118,6 +125,8 @@ public class  ProfileFragment extends Fragment {
         return binding.getRoot();
     }
 
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -133,17 +142,16 @@ public class  ProfileFragment extends Fragment {
             final StorageReference reference = storage.getReference().child("user_profile_pictures")
                     .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
             reference.putFile(sFile).addOnSuccessListener(taskSnapshot -> reference.getDownloadUrl().addOnSuccessListener(uri -> {
-
-                try {
+                startInBackgroundThread(uri);
+               /* try {
                     database.collection("users")
                             .document(FirebaseAuth.getInstance().getUid())
                             .update("profile",uri.toString());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                Toast.makeText(getContext(), "Profile Picture Uploaded", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getContext(), MainActivity.class));
+                Toast.makeText(getContext(), "Profile Picture Uploaded", Toast.LENGTH_SHORT).show();*/
+                //startActivity(new Intent(getContext(), MainActivity.class));
             })).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -152,6 +160,23 @@ public class  ProfileFragment extends Fragment {
             });
         }
     }
+
+    private void startInBackgroundThread(Uri uri) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    database.collection("users")
+                            .document(FirebaseAuth.getInstance().getUid())
+                            .update("profile",uri.toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+    }
+
     private void setData(){
         dialog.show();
         String name = binding.profileNameBox.getText().toString();

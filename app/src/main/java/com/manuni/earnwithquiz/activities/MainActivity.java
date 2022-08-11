@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,29 +40,49 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.content,new HomeFragment());
-        transaction.commit();
+        try {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.content,new HomeFragment());
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         binding.bottomBar.setOnItemSelectedListener(i -> {
             FragmentTransaction transaction1 = getSupportFragmentManager().beginTransaction();
             switch (i){
                 case 0:
-                    transaction1.replace(R.id.content,new HomeFragment());
-                    transaction1.commit();
+                    try {
+                        transaction1.replace(R.id.content,new HomeFragment());
+                        transaction1.commit();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
                     break;
                 case 1:
-                    transaction1.replace(R.id.content,new LeaderBoardsFragment());
-                    transaction1.commit();
+                    try {
+                        transaction1.replace(R.id.content,new LeaderBoardsFragment());
+                        transaction1.commit();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 2:
-                    transaction1.replace(R.id.content,new WalletFragment());
-                    transaction1.commit();
+                    try {
+                        transaction1.replace(R.id.content,new WalletFragment());
+                        transaction1.commit();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
                 case 3:
-                    transaction1.replace(R.id.content,new ProfileFragment());
-                    transaction1.commit();
+                    try {
+                        transaction1.replace(R.id.content,new ProfileFragment());
+                        transaction1.commit();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     break;
 
             }
@@ -91,4 +112,30 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    private static final int TIME_INTERVAL = 2000;
+    private long mBackPressed;
+
+    // When user click bakpress button this method is called
+    @Override
+    public void onBackPressed() {
+
+        // When landing in home screen
+
+            if (mBackPressed + TIME_INTERVAL > System.currentTimeMillis()) {
+
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+            } else {
+
+                Toast.makeText(getBaseContext(), "Press again to exit",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            mBackPressed = System.currentTimeMillis();
+
+        }
 }

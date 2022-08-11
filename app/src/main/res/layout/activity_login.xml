@@ -6,137 +6,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".activities.LoginActivity"
     android:background="@drawable/money1">
-
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E8151414"
+            android:background="#DC4C4747"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/loginTxt"
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="LOG IN"
-            android:layout_marginBottom="@dimen/_20mdp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_32font_mdp"
-            app:layout_constraintBottom_toTopOf="@+id/loginIcon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.36"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/loginIcon"
-            android:layout_width="@dimen/_75mdp"
-            android:layout_height="@dimen/_75mdp"
-            android:layout_marginTop="@dimen/_10mdp"
-            app:lottie_rawRes="@raw/lock"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="true"
-            app:layout_constraintBottom_toTopOf="@+id/loginEmailBoxId"
-            app:layout_constraintEnd_toEndOf="@id/loginTxt"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/loginTxt"
-            app:layout_constraintTop_toBottomOf="@+id/loginTxt" />
-
-        <EditText
-            android:id="@+id/loginEmailBoxId"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_35mdp"
-            android:layout_marginStart="@dimen/_10mdp"
-            android:layout_marginTop="@dimen/_15mdp"
-            android:layout_marginEnd="@dimen/_10mdp"
-            android:background="@drawable/edit_box"
-            android:hint="Email Address"
-            android:drawableLeft="@drawable/emailfornew"
-            android:drawablePadding="@dimen/_10mdp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/roboto_light"
-            android:padding="@dimen/_10mdp"
-            android:inputType="textEmailAddress"
-            android:paddingStart="@dimen/_10mdp"
-            android:textColorHint="@color/hint_color"
-            android:textSize="@dimen/_11font_mdp"
-            app:layout_constraintBottom_toTopOf="@+id/LogInPasswordBox"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginIcon" />
-
-        <EditText
-            android:id="@+id/LogInPasswordBox"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_35mdp"
-            android:layout_marginTop="@dimen/_20mdp"
-            android:background="@drawable/edit_box"
-            android:hint="Password"
-            android:padding="@dimen/_10mdp"
-            android:inputType="textPassword"
-            android:paddingStart="@dimen/_10mdp"
-            android:drawableLeft="@drawable/passwordfornew"
-            android:drawablePadding="@dimen/_10mdp"
-            android:fontFamily="@font/roboto_light"
-            android:textColorHint="@color/hint_color"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_11font_mdp"
-            app:layout_constraintBottom_toTopOf="@+id/loginId"
-            app:layout_constraintEnd_toEndOf="@id/loginEmailBoxId"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/loginEmailBoxId"
-            app:layout_constraintTop_toBottomOf="@+id/loginEmailBoxId" />
-
-        <Button
-            android:id="@+id/loginId"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_38mdp"
-            android:layout_marginTop="@dimen/_25mdp"
-            android:background="@drawable/log_btn"
-            android:text="Log In"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/createAnId"
-            app:layout_constraintEnd_toEndOf="@id/LogInPasswordBox"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="@id/LogInPasswordBox"
-            app:layout_constraintTop_toBottomOf="@+id/LogInPasswordBox" />
-
-        <TextView
-            android:id="@+id/createAnId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Click here to"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/create"
-            app:layout_constraintHorizontal_bias="0.96"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginEnd="@dimen/_5mdp"
-            android:layout_marginTop="@dimen/_7mdp"
-            app:layout_constraintTop_toBottomOf="@id/loginId" />
-
-        <TextView
-            android:id="@+id/create"
-            android:layout_width="57dp"
-            android:layout_height="18dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="SIGN UP"
-            android:textColor="#FFC107"
-            android:layout_gravity="center_vertical"
-            app:layout_constraintBottom_toBottomOf="@+id/createAnId"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/createAnId"
-            app:layout_constraintTop_toTopOf="@+id/createAnId" />
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                        <TextView
+                            android:id="@+id/loginTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="LOG IN"
+                            android:layout_marginBottom="@dimen/_20mdp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_32font_mdp"
+                            app:layout_constraintBottom_toTopOf="@+id/loginIcon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.36"
+                            app:layout_constraintVertical_chainStyle="packed" />
+
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/loginIcon"
+                            android:layout_width="@dimen/_75mdp"
+                            android:layout_height="@dimen/_75mdp"
+                            android:layout_marginTop="@dimen/_10mdp"
+                            app:lottie_rawRes="@raw/lock"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
+                            app:layout_constraintBottom_toTopOf="@+id/loginEmailBoxId"
+                            app:layout_constraintEnd_toEndOf="@id/loginTxt"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@id/loginTxt"
+                            app:layout_constraintTop_toBottomOf="@+id/loginTxt" />
+
+                        <EditText
+                            android:id="@+id/loginEmailBoxId"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_35mdp"
+                            android:layout_marginStart="@dimen/_10mdp"
+                            android:layout_marginTop="@dimen/_15mdp"
+                            android:layout_marginEnd="@dimen/_10mdp"
+                            android:background="@drawable/edit_box"
+                            android:hint="Email Address"
+                            android:drawableLeft="@drawable/emailfornew"
+                            android:drawablePadding="@dimen/_10mdp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/roboto_light"
+                            android:padding="@dimen/_10mdp"
+                            android:inputType="textEmailAddress"
+                            android:paddingStart="@dimen/_10mdp"
+                            android:textColorHint="@color/hint_color"
+                            android:textSize="@dimen/_11font_mdp"
+                            app:layout_constraintBottom_toTopOf="@+id/LogInPasswordBox"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/loginIcon" />
+
+                        <EditText
+                            android:id="@+id/LogInPasswordBox"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_35mdp"
+                            android:layout_marginTop="@dimen/_20mdp"
+                            android:background="@drawable/edit_box"
+                            android:hint="Password"
+                            android:padding="@dimen/_10mdp"
+                            android:inputType="textPassword"
+                            android:paddingStart="@dimen/_10mdp"
+                            android:drawableLeft="@drawable/passwordfornew"
+                            android:drawablePadding="@dimen/_10mdp"
+                            android:fontFamily="@font/roboto_light"
+                            android:textColorHint="@color/hint_color"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_11font_mdp"
+                            app:layout_constraintBottom_toTopOf="@+id/loginId"
+                            app:layout_constraintEnd_toEndOf="@id/loginEmailBoxId"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@id/loginEmailBoxId"
+                            app:layout_constraintTop_toBottomOf="@+id/loginEmailBoxId" />
+
+                        <Button
+                            android:id="@+id/loginId"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_38mdp"
+                            android:layout_marginTop="@dimen/_25mdp"
+                            android:background="@drawable/log_btn"
+                            android:text="Log In"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toTopOf="@+id/createAnId"
+                            app:layout_constraintEnd_toEndOf="@id/LogInPasswordBox"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="@id/LogInPasswordBox"
+                            app:layout_constraintTop_toBottomOf="@+id/LogInPasswordBox" />
+
+                        <TextView
+                            android:id="@+id/createAnId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Click here to"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/create"
+                            app:layout_constraintHorizontal_bias="0.96"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            android:layout_marginEnd="@dimen/_5mdp"
+                            android:layout_marginTop="@dimen/_7mdp"
+                            app:layout_constraintTop_toBottomOf="@id/loginId" />
+
+                        <TextView
+                            android:id="@+id/create"
+                            android:layout_width="57dp"
+                            android:layout_height="18dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="SIGN UP"
+                            android:textColor="#FFC107"
+                            android:layout_gravity="center_vertical"
+                            app:layout_constraintBottom_toBottomOf="@+id/createAnId"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/createAnId"
+                            app:layout_constraintTop_toTopOf="@+id/createAnId" />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

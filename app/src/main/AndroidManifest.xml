@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.manuni.earnwithquiz">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -11,8 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EarnWithQuiz"
-        android:usesCleartextTraffic="true">
-        <activity android:name=".activities.LearnMoreActivity"></activity>
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity android:name=".activities.LearnMoreActivity" />
         <activity android:name=".activities.WelcomeActivity" />
 
         <meta-data
@@ -29,7 +34,8 @@
             android:theme="@style/full_screen_activity" />
         <activity
             android:name=".activities.LoginActivity"
-            android:theme="@style/full_screen_activity">
+            android:theme="@style/full_screen_activity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +44,8 @@
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:label="Quiz Or Spin" />
+            android:label="Quiz Or Spin"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard"/>
 
         <meta-data
             android:name="preloaded_fonts"

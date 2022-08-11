@@ -67,7 +67,7 @@ public class WithdrawRequest {
     public void setSentBy(String sentBy) {
         this.sentBy = sentBy;
     }
-
+    
     @ServerTimestamp
     private Date createdAt;
 

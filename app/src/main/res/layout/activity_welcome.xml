@@ -6,101 +6,119 @@
     android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".activities.WelcomeActivity">
-
-    <TextView
-        android:id="@+id/welcomeTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_to"
-        android:textSize="@dimen/_17font_mdp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_30mdp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintEnd_toStartOf="@id/welcomeName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-        android:id="@+id/welcomeName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mahmud_islam"
-        android:layout_marginStart="@dimen/_7mdp"
-        app:layout_constraintStart_toEndOf="@id/welcomeTxt"
-        app:layout_constraintTop_toTopOf="@id/welcomeTxt"
-        app:layout_constraintBottom_toBottomOf="@id/welcomeTxt"
-        android:textSize="@dimen/_20font_mdp"
-        android:fontFamily="@font/roboto_bold"
-        android:textColor="@color/orange_color"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:id="@+id/coinTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/you_got_45_coins"
-        android:textColor="@color/hint_color"
-        android:fontFamily="@font/roboto_medium"
-        app:layout_constraintTop_toBottomOf="@id/welcomeTxt"
-        app:layout_constraintStart_toStartOf="@id/welcomeTxt"
-        app:layout_constraintEnd_toEndOf="@id/welcomeName"
-        android:layout_marginTop="@dimen/_10mdp"
-        android:textSize="@dimen/_15font_mdp"/>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie"
-        android:layout_width="@dimen/_150mdp"
-        android:layout_height="@dimen/_150mdp"
-        app:layout_constraintEnd_toEndOf="@id/welcomeName"
-        app:layout_constraintStart_toStartOf="@id/welcomeTxt"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/welcome_money"
-        app:layout_constraintTop_toBottomOf="@id/coinTxt"
-        android:layout_marginTop="@dimen/_15mdp"
-        tools:layout_editor_absoluteY="107dp" />
-    <Button
-        android:id="@+id/earningBtn"
-        android:layout_width="@dimen/_200mdp"
-        android:layout_height="@dimen/_40mdp"
-        android:text="@string/let_s_start_earning"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_15font_mdp"
-        android:background="@drawable/earning_btn"
-        app:layout_constraintTop_toBottomOf="@id/lottie"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="@dimen/_20mdp"/>
-    <TextView
-        android:layout_marginTop="@dimen/_15mdp"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/play_quiz_info"
-        app:layout_constraintTop_toBottomOf="@id/earningBtn"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="@dimen/_14font_mdp"
-        android:gravity="left"
-        android:fontFamily="@font/roboto_light"
-        android:textColor="@color/result_text_color"
-        android:paddingTop="@dimen/_8mdp"
-        android:paddingBottom="@dimen/_8mdp"
-        android:paddingStart="@dimen/_17mdp"
-        android:paddingEnd="@dimen/_8mdp"/>
-    <TextView
-        android:id="@+id/learnMore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/learn_more"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="@dimen/_16font_mdp"
-        android:fontFamily="@font/roboto_medium"
-        android:textColor="@color/blue_color"
-        android:textAllCaps="false"
-        android:layout_marginBottom="@dimen/_7mdp"
-        android:layout_marginEnd="@dimen/_4mdp"/>
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/welcomeTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_to"
+                android:textSize="@dimen/_17font_mdp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_30mdp"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintEnd_toStartOf="@id/welcomeName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <TextView
+                android:id="@+id/welcomeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mahmud_islam"
+                android:layout_marginStart="@dimen/_7mdp"
+                app:layout_constraintStart_toEndOf="@id/welcomeTxt"
+                app:layout_constraintTop_toTopOf="@id/welcomeTxt"
+                app:layout_constraintBottom_toBottomOf="@id/welcomeTxt"
+                android:textSize="@dimen/_20font_mdp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/orange_color"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/coinTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_got_45_coins"
+                android:textColor="@color/hint_color"
+                android:fontFamily="@font/roboto_medium"
+                app:layout_constraintTop_toBottomOf="@id/welcomeTxt"
+                app:layout_constraintStart_toStartOf="@id/welcomeTxt"
+                app:layout_constraintEnd_toEndOf="@id/welcomeName"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:textSize="@dimen/_15font_mdp"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie"
+                android:layout_width="@dimen/_150mdp"
+                android:layout_height="@dimen/_150mdp"
+                app:layout_constraintEnd_toEndOf="@id/welcomeName"
+                app:layout_constraintStart_toStartOf="@id/welcomeTxt"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/welcome_money"
+                app:layout_constraintTop_toBottomOf="@id/coinTxt"
+                android:layout_marginTop="@dimen/_15mdp"
+                tools:layout_editor_absoluteY="107dp" />
+            <Button
+                android:id="@+id/earningBtn"
+                android:layout_width="@dimen/_200mdp"
+                android:layout_height="@dimen/_40mdp"
+                android:text="@string/let_s_start_earning"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15font_mdp"
+                android:background="@drawable/earning_btn"
+                app:layout_constraintTop_toBottomOf="@id/lottie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_20mdp"/>
+            <TextView
+                android:id="@+id/playInfo"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/play_quiz_info"
+                app:layout_constraintTop_toBottomOf="@id/earningBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/_14font_mdp"
+                android:gravity="left"
+                android:fontFamily="@font/roboto_light"
+                android:textColor="@color/result_text_color"
+                android:paddingTop="@dimen/_8mdp"
+                android:paddingBottom="@dimen/_8mdp"
+                android:paddingStart="@dimen/_17mdp"
+                android:paddingEnd="@dimen/_8mdp"/>
+            <TextView
+                android:id="@+id/learnMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/learn_more"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/_13font_mdp"
+                android:fontFamily="@font/roboto_medium"
+                android:textColor="@color/blue_color"
+                android:textAllCaps="false"
+                app:layout_constraintTop_toBottomOf="@id/playInfo"
+                android:layout_marginBottom="@dimen/_7mdp"
+                android:layout_marginEnd="@dimen/_4mdp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

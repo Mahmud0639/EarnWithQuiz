@@ -6,200 +6,217 @@
     android:layout_height="match_parent"
     tools:context=".activities.QuizActivity">
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView2"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/_6mdp"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-6447793920864109/8306037640"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/view4"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_100mdp"
-        android:background="@drawable/background_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <View
-        android:id="@+id/view5"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/_150mdp"
-        android:layout_marginStart="@dimen/_22mdp"
-        android:layout_marginLeft="@dimen/_22mdp"
-        android:layout_marginTop="@dimen/_5mdp"
-        android:layout_marginEnd="@dimen/_22mdp"
-        android:layout_marginRight="@dimen/_22mdp"
-        android:background="@drawable/rounded_box"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timer" />
-
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12mdp"
-        android:layout_marginLeft="@dimen/_12mdp"
-        android:layout_marginTop="@dimen/_12mdp"
-        android:drawablePadding="@dimen/_8mdp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/_15"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14font_mdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:drawableLeftCompat="@drawable/ic_timer" />
-
-    <TextView
-        android:id="@+id/questionCounter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12mdp"
-        android:layout_marginEnd="@dimen/_12mdp"
-        android:layout_marginRight="@dimen/_12mdp"
-        android:drawablePadding="@dimen/_8mdp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/textforsymbol"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14font_mdp"
-        app:drawableTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:drawableRightCompat="@drawable/ic_question" />
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_12mdp"
-        android:layout_marginTop="@dimen/_12mdp"
-        android:layout_marginEnd="@dimen/_12mdp"
-        android:fontFamily="@font/roboto_bold"
-        android:gravity="center"
-        android:text="@string/wait_a_bit"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_14font_mdp"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toTopOf="@+id/view5" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/_6mdp"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-6447793920864109/8306037640"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="@dimen/_55mdp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_18mdp"
-        android:layout_marginLeft="@dimen/_18mdp"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:srcCompat="@drawable/fiftyfiftyline"
-        android:contentDescription="@string/todo" />
+            <View
+                android:id="@+id/view4"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_100mdp"
+                android:background="@drawable/background_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="@dimen/_55mdp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_18mdp"
-        android:layout_marginRight="@dimen/_18mdp"
-        app:layout_constraintBottom_toBottomOf="@+id/view5"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/view5"
-        app:srcCompat="@drawable/audiencepoll"
-        android:contentDescription="@string/todo1" />
+            <View
+                android:id="@+id/view5"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150mdp"
+                android:layout_marginStart="@dimen/_22mdp"
+                android:layout_marginLeft="@dimen/_22mdp"
+                android:layout_marginTop="@dimen/_5mdp"
+                android:layout_marginEnd="@dimen/_22mdp"
+                android:layout_marginRight="@dimen/_22mdp"
+                android:background="@drawable/rounded_box"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timer" />
 
-    <TextView
-        android:id="@+id/option1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_7mdp"
-        android:background="@drawable/option_unselected"
-        android:onClick="onClick"
-        android:padding="@dimen/_10mdp"
-        app:layout_constraintEnd_toEndOf="@+id/view5"
-        app:layout_constraintStart_toStartOf="@+id/view5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12mdp"
+                android:layout_marginLeft="@dimen/_12mdp"
+                android:layout_marginTop="@dimen/_12mdp"
+                android:drawablePadding="@dimen/_8mdp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/_15"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14font_mdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:drawableLeftCompat="@drawable/ic_timer" />
 
-    <TextView
-        android:id="@+id/option2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_7mdp"
-        android:background="@drawable/option_unselected"
-        android:onClick="onClick"
-        android:padding="@dimen/_10mdp"
-        app:layout_constraintEnd_toEndOf="@+id/option1"
-        app:layout_constraintStart_toStartOf="@+id/option1"
-        app:layout_constraintTop_toBottomOf="@+id/option1" />
+            <TextView
+                android:id="@+id/questionCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12mdp"
+                android:layout_marginEnd="@dimen/_12mdp"
+                android:layout_marginRight="@dimen/_12mdp"
+                android:drawablePadding="@dimen/_8mdp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/textforsymbol"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14font_mdp"
+                app:drawableTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:drawableRightCompat="@drawable/ic_question" />
 
-    <TextView
-        android:id="@+id/option4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_7mdp"
-        android:background="@drawable/option_unselected"
-        android:onClick="onClick"
-        android:padding="@dimen/_10mdp"
-        app:layout_constraintEnd_toEndOf="@+id/option3"
-        app:layout_constraintStart_toStartOf="@+id/option3"
-        app:layout_constraintTop_toBottomOf="@+id/option3" />
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12mdp"
+                android:layout_marginTop="@dimen/_12mdp"
+                android:layout_marginEnd="@dimen/_12mdp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/wait_a_bit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14font_mdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view5"
+                app:layout_constraintEnd_toEndOf="@+id/view5"
+                app:layout_constraintStart_toStartOf="@+id/view5"
+                app:layout_constraintTop_toTopOf="@+id/view5" />
 
-    <TextView
-        android:id="@+id/option3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_7mdp"
-        android:background="@drawable/option_unselected"
-        android:onClick="onClick"
-        android:padding="@dimen/_10mdp"
-        app:layout_constraintEnd_toEndOf="@+id/option2"
-        app:layout_constraintStart_toStartOf="@+id/option2"
-        app:layout_constraintTop_toBottomOf="@+id/option2" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_55mdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_18mdp"
+                android:layout_marginLeft="@dimen/_18mdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view5"
+                app:layout_constraintStart_toStartOf="@+id/view5"
+                app:layout_constraintTop_toBottomOf="@+id/view5"
+                app:srcCompat="@drawable/fiftyfiftyline"
+                android:contentDescription="@string/todo" />
 
-    <Button
-        android:id="@+id/quitBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_22mdp"
-        android:layout_marginLeft="@dimen/_22mdp"
-        android:layout_marginTop="@dimen/_18mdp"
-        android:layout_marginEnd="@dimen/_5mdp"
-        android:layout_marginRight="@dimen/_5mdp"
-        android:background="@drawable/spin_button_bg"
-        android:text="@string/quit"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/nextBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option4" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="@dimen/_55mdp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_18mdp"
+                android:layout_marginRight="@dimen/_18mdp"
+                app:layout_constraintBottom_toBottomOf="@+id/view5"
+                app:layout_constraintEnd_toEndOf="@+id/view5"
+                app:layout_constraintTop_toBottomOf="@+id/view5"
+                app:srcCompat="@drawable/audiencepoll"
+                android:contentDescription="@string/todo1" />
 
-    <Button
-        android:id="@+id/nextBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_5mdp"
-        android:layout_marginLeft="@dimen/_5mdp"
-        android:layout_marginTop="@dimen/_18mdp"
-        android:layout_marginEnd="@dimen/_22mdp"
-        android:layout_marginRight="@dimen/_22mdp"
-        android:background="@drawable/share_button_bg"
-        android:onClick="onClick"
-        android:text="@string/next"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/quitBtn"
-        app:layout_constraintTop_toBottomOf="@+id/option4" />
+            <TextView
+                android:id="@+id/option1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7mdp"
+                android:background="@drawable/option_unselected"
+                android:onClick="onClick"
+                android:padding="@dimen/_10mdp"
+                app:layout_constraintEnd_toEndOf="@+id/view5"
+                app:layout_constraintStart_toStartOf="@+id/view5"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+            <TextView
+                android:id="@+id/option2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7mdp"
+                android:background="@drawable/option_unselected"
+                android:onClick="onClick"
+                android:padding="@dimen/_10mdp"
+                app:layout_constraintEnd_toEndOf="@+id/option1"
+                app:layout_constraintStart_toStartOf="@+id/option1"
+                app:layout_constraintTop_toBottomOf="@+id/option1" />
+
+            <TextView
+                android:id="@+id/option4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7mdp"
+                android:background="@drawable/option_unselected"
+                android:onClick="onClick"
+                android:padding="@dimen/_10mdp"
+                app:layout_constraintEnd_toEndOf="@+id/option3"
+                app:layout_constraintStart_toStartOf="@+id/option3"
+                app:layout_constraintTop_toBottomOf="@+id/option3" />
+
+            <TextView
+                android:id="@+id/option3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_7mdp"
+                android:background="@drawable/option_unselected"
+                android:onClick="onClick"
+                android:padding="@dimen/_10mdp"
+                app:layout_constraintEnd_toEndOf="@+id/option2"
+                app:layout_constraintStart_toStartOf="@+id/option2"
+                app:layout_constraintTop_toBottomOf="@+id/option2" />
+
+            <Button
+                android:id="@+id/quitBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_22mdp"
+                android:layout_marginLeft="@dimen/_22mdp"
+                android:layout_marginTop="@dimen/_18mdp"
+                android:layout_marginEnd="@dimen/_5mdp"
+                android:layout_marginRight="@dimen/_5mdp"
+                android:background="@drawable/spin_button_bg"
+                android:text="@string/quit"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/nextBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/option4" />
+
+            <Button
+                android:id="@+id/nextBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5mdp"
+                android:layout_marginLeft="@dimen/_5mdp"
+                android:layout_marginTop="@dimen/_18mdp"
+                android:layout_marginEnd="@dimen/_22mdp"
+                android:layout_marginRight="@dimen/_22mdp"
+                android:background="@drawable/share_button_bg"
+                android:onClick="onClick"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/quitBtn"
+                app:layout_constraintTop_toBottomOf="@+id/option4" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
