@@ -33,6 +33,7 @@ public class QuizActivity extends AppCompatActivity {
     FirebaseFirestore database;
     int correctAnswers = 0;
     private InterstitialAd mInterstitialAd;
+    private int firstClick = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +91,7 @@ public class QuizActivity extends AppCompatActivity {
 
           final String catId = getIntent().getStringExtra("catId");
         Random random = new Random();
-          final int rand = random.nextInt(50);
+          final int rand = random.nextInt(25);
 
         database.collection("categories")
                 .document(catId)
@@ -167,8 +168,22 @@ public class QuizActivity extends AppCompatActivity {
         @SuppressLint("UseCompatLoadingForDrawables")
         void checkAnswer(TextView textView){
         String selectedAnswer = textView.getText().toString();
+        if (firstClick == 0){
             if (selectedAnswer.equals(questionItem.getAnswer())){
                 correctAnswers++;
+                //correctAnswers = correctAnswers+0;
+                textView.setBackground(getResources().getDrawable(R.drawable.option_right));
+                firstClick = 1;
+            }
+            else {
+                firstClick =1;
+                showAnswer();
+                textView.setBackground(getResources().getDrawable(R.drawable.option_wrong));
+            }
+        }else {
+            if (selectedAnswer.equals(questionItem.getAnswer())){
+                //correctAnswers++;
+                Toast.makeText(this, "Click Next Button", Toast.LENGTH_SHORT).show();
                 textView.setBackground(getResources().getDrawable(R.drawable.option_right));
             }
             else {
@@ -176,6 +191,11 @@ public class QuizActivity extends AppCompatActivity {
                 textView.setBackground(getResources().getDrawable(R.drawable.option_wrong));
             }
         }
+
+
+        }
+
+
         @SuppressLint("UseCompatLoadingForDrawables")
         void reset(){
         binding.option1.setBackground(getResources().getDrawable(R.drawable.option_unselected));
@@ -185,14 +205,20 @@ public class QuizActivity extends AppCompatActivity {
         }
         @SuppressLint("UseCompatLoadingForDrawables")
         void showAnswer(){
-        if (questionItem.getAnswer().equals(binding.option1.getText().toString()))
+        if (questionItem.getAnswer().equals(binding.option1.getText().toString())){
             binding.option1.setBackground(getResources().getDrawable(R.drawable.option_right));
-        else if (questionItem.getAnswer().equals(binding.option2.getText().toString()))
+        }
+        else if (questionItem.getAnswer().equals(binding.option2.getText().toString())){
             binding.option2.setBackground(getResources().getDrawable(R.drawable.option_right));
-        else if (questionItem.getAnswer().equals(binding.option3.getText().toString()))
+        }
+        else if (questionItem.getAnswer().equals(binding.option3.getText().toString())){
             binding.option3.setBackground(getResources().getDrawable(R.drawable.option_right));
-        else if (questionItem.getAnswer().equals(binding.option4.getText().toString()))
+        }
+
+        else if (questionItem.getAnswer().equals(binding.option4.getText().toString())){
             binding.option4.setBackground(getResources().getDrawable(R.drawable.option_right));
+        }
+
         }
 
         @SuppressLint("NonConstantResourceId")
@@ -206,10 +232,13 @@ public class QuizActivity extends AppCompatActivity {
                     timer.cancel();
                 TextView selected = (TextView) view;
                 checkAnswer(selected);
+
+
                 break;
             case R.id.nextBtn:
 
                 reset();
+                firstClick = 0;
                 if (startPoint <= 3) {
                     startPoint++;
 

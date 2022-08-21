@@ -8,15 +8,16 @@
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <com.google.android.gms.ads.AdView
                 android:id="@+id/adView2"
                 android:layout_width="0dp"
@@ -66,9 +67,9 @@
                 android:text="@string/_15"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14font_mdp"
+                app:drawableLeftCompat="@drawable/ic_timer"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:drawableLeftCompat="@drawable/ic_timer" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/questionCounter"
@@ -82,10 +83,10 @@
                 android:text="@string/textforsymbol"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_14font_mdp"
+                app:drawableRightCompat="@drawable/ic_question"
                 app:drawableTint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:drawableRightCompat="@drawable/ic_question" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/question"
@@ -110,11 +111,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_18mdp"
                 android:layout_marginLeft="@dimen/_18mdp"
+                android:contentDescription="@string/todo"
                 app:layout_constraintBottom_toBottomOf="@+id/view5"
                 app:layout_constraintStart_toStartOf="@+id/view5"
                 app:layout_constraintTop_toBottomOf="@+id/view5"
-                app:srcCompat="@drawable/fiftyfiftyline"
-                android:contentDescription="@string/todo" />
+                app:srcCompat="@drawable/fiftyfiftyline" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -122,11 +123,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/_18mdp"
                 android:layout_marginRight="@dimen/_18mdp"
+                android:contentDescription="@string/todo1"
                 app:layout_constraintBottom_toBottomOf="@+id/view5"
                 app:layout_constraintEnd_toEndOf="@+id/view5"
                 app:layout_constraintTop_toBottomOf="@+id/view5"
-                app:srcCompat="@drawable/audiencepoll"
-                android:contentDescription="@string/todo1" />
+                app:srcCompat="@drawable/audiencepoll" />
 
             <TextView
                 android:id="@+id/option1"
@@ -211,7 +212,6 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/quitBtn"
                 app:layout_constraintTop_toBottomOf="@+id/option4" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
