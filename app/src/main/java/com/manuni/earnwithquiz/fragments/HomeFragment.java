@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.manuni.earnwithquiz.BuildConfig;
 import com.manuni.earnwithquiz.adapters.CategoryAdapter;
 import com.manuni.earnwithquiz.models.CategoryModel;
 import com.manuni.earnwithquiz.activities.SpinnerActivity;
@@ -123,8 +124,8 @@ public class HomeFragment extends Fragment {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
 
-        String subject = "About EarnWithQuiz app";
-        String body = "This app is very important app to get more earning in quickly. \nAnd also very easy to earn more.You can Download this app from this link\ncom.manuni.earnwithquiz";
+        String subject = "About Earn Money app";
+        String body = "This app will help you to get more earning in quickly. \nAnd also very easy to earn more.You can Download this app from this link\n\"https://play.google.com/store/apps/details?id= "+ BuildConfig.APPLICATION_ID;
 
         intent.putExtra(Intent.EXTRA_SUBJECT,subject);
         intent.putExtra(Intent.EXTRA_TEXT,body);

@@ -171,7 +171,6 @@ public class QuizActivity extends AppCompatActivity {
         if (firstClick == 0){
             if (selectedAnswer.equals(questionItem.getAnswer())){
                 correctAnswers++;
-                //correctAnswers = correctAnswers+0;
                 textView.setBackground(getResources().getDrawable(R.drawable.option_right));
                 firstClick = 1;
             }
@@ -182,9 +181,9 @@ public class QuizActivity extends AppCompatActivity {
             }
         }else {
             if (selectedAnswer.equals(questionItem.getAnswer())){
-                //correctAnswers++;
-                Toast.makeText(this, "Click Next Button", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Click Next Button", Toast.LENGTH_SHORT).show();
                 textView.setBackground(getResources().getDrawable(R.drawable.option_right));
+
             }
             else {
                 showAnswer();

@@ -3,6 +3,7 @@ package com.manuni.earnwithquiz.activities;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,8 +49,12 @@ public class ResultScreenActivity extends AppCompatActivity {
 
         if (correctAnswers < 1) {
             binding.congats.setText("Bad Luck!");
+            binding.imageView6.setVisibility(View.INVISIBLE);
+            binding.badLuckLottie.setVisibility(View.VISIBLE);
         } else {
             binding.congats.setText("Congratulations!");
+            binding.badLuckLottie.setVisibility(View.INVISIBLE);
+            binding.imageView6.setVisibility(View.VISIBLE);
         }
         binding.restartBtn.setOnClickListener(v -> {
             startActivity(new Intent(ResultScreenActivity.this, MainActivity.class));
