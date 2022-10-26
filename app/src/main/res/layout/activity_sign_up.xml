@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="SIGN UP"
+                android:text="@string/sign_up"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_32font_mdp"
                 app:layout_constraintBottom_toTopOf="@+id/loginIcon"
@@ -67,7 +67,7 @@
                 android:layout_marginTop="@dimen/_15mdp"
                 android:layout_marginEnd="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="Full Name"
+                android:hint="@string/full_name"
                 android:drawablePadding="@dimen/_10mdp"
                 android:drawableLeft="@drawable/ic_name"
                 android:inputType="text"
@@ -88,7 +88,7 @@
                 android:layout_height="@dimen/_35mdp"
                 android:layout_marginTop="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="Email Address"
+                android:hint="@string/email_address"
                 android:padding="@dimen/_10mdp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white"
@@ -109,7 +109,7 @@
                 android:layout_height="@dimen/_35mdp"
                 android:layout_marginTop="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="Password"
+                android:hint="password(6 digit)"
                 android:padding="@dimen/_10mdp"
                 android:paddingStart="@dimen/_10mdp"
                 android:drawablePadding="@dimen/_10mdp"
@@ -158,48 +158,54 @@
                 app:layout_constraintStart_toStartOf="@id/referBox"
                 app:layout_constraintTop_toBottomOf="@id/referBox" />
 
-            <TextView
-                android:id="@+id/create"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/loginLinearLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Click to"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toStartOf="@+id/login"
-                app:layout_constraintHorizontal_bias="0.95"
-                app:layout_constraintHorizontal_chainStyle="packed"
+                android:gravity="end"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginEnd="@dimen/_5mdp"
-                android:fontFamily="@font/roboto_bold"
-                android:layout_marginTop="@dimen/_7mdp"
-                app:layout_constraintTop_toBottomOf="@id/loginId" />
-
-            <TextView
-                android:id="@+id/login"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LOGIN"
-                android:fontFamily="@font/roboto_bold"
-                android:textColor="#FFC107"
-                app:layout_constraintBottom_toBottomOf="@id/create"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/create"
-                app:layout_constraintTop_toTopOf="@id/create" />
+                android:layout_marginStart="@dimen/_10mdp"
+                android:layout_marginEnd="@dimen/_10mdp"
+                android:layout_marginTop="@dimen/_8mdp"
+                app:layout_constraintTop_toBottomOf="@id/loginId">
+
+                <TextView
+                    android:id="@+id/create"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="@dimen/_5mdp"
+                    android:fontFamily="@font/roboto_bold"
+                    app:layout_constraintTop_toBottomOf="@id/loginId" />
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOGIN"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/_5mdp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="#FFC107"
+                    />
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30mdp"
                 android:fontFamily="@font/roboto_light"
                 android:text="By signing up you are agreeing to our terms of service"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/_9font_mdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textSize="@dimen/_9font_mdp"
-                app:layout_constraintTop_toBottomOf="@id/login"
-                app:layout_constraintVertical_bias="0.93"
-                android:layout_marginTop="@dimen/_30mdp"
-                android:layout_marginBottom="@dimen/_20mdp"/>
+                app:layout_constraintTop_toBottomOf="@id/loginLinearLayout" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

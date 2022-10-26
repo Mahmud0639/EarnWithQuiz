@@ -120,7 +120,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10mdp"
         android:background="@drawable/textbox"
-        android:drawableStart="@drawable/bkash"
+        android:drawableStart="@drawable/bkash_24"
         android:drawablePadding="@dimen/_8mdp"
         android:ems="10"
         android:hint="@string/bkash_number"

@@ -30,14 +30,13 @@
                     android:layout_height="match_parent">
 
 
-
                         <TextView
                             android:id="@+id/loginTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="LOG IN"
                             android:layout_marginBottom="@dimen/_20mdp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="LOGIN"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_32font_mdp"
                             app:layout_constraintBottom_toTopOf="@+id/loginIcon"
@@ -45,7 +44,7 @@
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.36"
+                            app:layout_constraintVertical_bias="0.07999998"
                             app:layout_constraintVertical_chainStyle="packed" />
 
                         <com.airbnb.lottie.LottieAnimationView
@@ -92,7 +91,7 @@
                             android:layout_height="@dimen/_35mdp"
                             android:layout_marginTop="@dimen/_20mdp"
                             android:background="@drawable/edit_box"
-                            android:hint="Password"
+                            android:hint="password(6 digit)"
                             android:padding="@dimen/_10mdp"
                             android:inputType="textPassword"
                             android:paddingStart="@dimen/_10mdp"
@@ -116,43 +115,52 @@
                             android:background="@drawable/log_btn"
                             android:text="Log In"
                             android:textColor="@color/white"
-                            app:layout_constraintBottom_toTopOf="@+id/createAnId"
                             app:layout_constraintEnd_toEndOf="@id/LogInPasswordBox"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="@id/LogInPasswordBox"
                             app:layout_constraintTop_toBottomOf="@+id/LogInPasswordBox" />
 
-                        <TextView
-                            android:id="@+id/createAnId"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:id="@+id/linearLayoutForSignUp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="Click here to"
-                            android:textAllCaps="false"
-                            android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@id/create"
-                            app:layout_constraintHorizontal_bias="0.96"
-                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintTop_toBottomOf="@id/loginId"
                             app:layout_constraintStart_toStartOf="parent"
-                            android:layout_marginEnd="@dimen/_5mdp"
-                            android:layout_marginTop="@dimen/_7mdp"
-                            app:layout_constraintTop_toBottomOf="@id/loginId" />
+                            android:layout_marginStart="@dimen/_10mdp"
+                            android:layout_marginEnd="@dimen/_10mdp"
+                            android:gravity="end"
+                            android:layout_marginTop="@dimen/_8mdp"
+                            app:layout_constraintEnd_toEndOf="parent">
+                                <TextView
+                                    android:id="@+id/createAnId"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_bold"
+                                    android:text="Don't have an account?"
+                                    android:layout_gravity="center"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:layout_marginEnd="@dimen/_5mdp"
+                                   />
+                                <ImageView
+                                    android:id="@+id/create"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_login_svg"/>
 
-                        <TextView
-                            android:id="@+id/create"
-                            android:layout_width="57dp"
-                            android:layout_height="18dp"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="SIGN UP"
-                            android:textColor="#FFC107"
-                            android:layout_gravity="center_vertical"
-                            app:layout_constraintBottom_toBottomOf="@+id/createAnId"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/createAnId"
-                            app:layout_constraintTop_toTopOf="@+id/createAnId" />
+                        </LinearLayout>
 
 
+                      <TextView
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                              android:text="Please Sign Up at first to continue."
+                              android:textColor="@color/white"
+                              app:layout_constraintTop_toBottomOf="@id/linearLayoutForSignUp"
+                              app:layout_constraintStart_toStartOf="parent"
+                              app:layout_constraintEnd_toEndOf="parent"
+                              android:layout_marginTop="@dimen/_20mdp"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

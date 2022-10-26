@@ -7,11 +7,9 @@
     <string name="signin">Sign In Here</string>
     <string name="FullName">Full Name</string>
     <string name="eamil_address">Email Address</string>
-    <string name="password">Password</string>
     <string name="refer_code_optional">Refer Code (optional)</string>
     <string name="submit">Submit</string>
     <string name="Policy">By signing up you agree to our privacy policy and terms and conditions. Click here…</string>
-    <string name="email_address">Email Address</string>
     <string name="enter_your_name1">Enter your name</string>
     <string name="update_profile1">Update Profile</string>
     <string name="todo">TODO</string>
@@ -109,7 +107,7 @@
     <string name="deny2">Deny</string>
     <string name="how_to_play_quiz">How to play Quiz ?</string>
     <string name="quiz_info">In order to play quiz, you have to select any one of the categories first. There will be five MCQ questions in each category. Fifty coins will be found in five correct answer. There will be 10 coins for each correct answer. Each incorrect answer will be deducted by 10 coins.</string>
-    <string name="earn_more_info">To earn more money, you have to reach the destination coins very fast. To reach the destination coins very fast you can play game. You can earn almost 1$ for every withdraw.</string>
+    <string name="earn_more_info">To earn more money, you have to reach the destination coins very fast. To reach the destination coins very fast you can play game. You can earn almost 1$ as frequency for every withdraw.</string>
     <string name="withdraw_way">You must earn 50,000 coins to withdraw. After earning 50,000 coins you have to choose one of the given options. If you want to withdraw using PayPal, provide PayPal email address. And if you want to withdraw using bKash number, provide bKash number.</string>
     <string name="play_quiz_info">Play more Quiz and earn more money. We will send your withdraw within 3 days.</string>
     <string name="learn_more">Learn more...</string>
@@ -117,5 +115,9 @@
     <string name="you_got_45_coins">You got 45 coins!</string>
     <string name="mahmud_islam">Mahmud Islam</string>
     <string name="welcome_to">Welcome</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.manuni.quizme.SpinWheel;
 
 import android.animation.Animator;
 import android.animation.TimeInterpolator;
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -157,6 +158,7 @@ public class PielView extends View {
     /**
      * @param canvas
      */
+    @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);

@@ -51,6 +51,7 @@ public class  ProfileFragment extends Fragment {
         FirebaseAuth auth;
         FirebaseFirestore database;
         User user;
+        Thread thread;
         //ProgressDialog dialog;
         CustomProgressingProfile dialog;
     @Override
@@ -157,7 +158,7 @@ public class  ProfileFragment extends Fragment {
     }
 
     private void startInBackgroundThread(Uri uri) {
-        Thread thread = new Thread(new Runnable() {
+         thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {

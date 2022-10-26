@@ -45,7 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         });
 
-        binding.login.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this,LoginActivity.class)));
+        binding.loginLinearLayout.setOnClickListener(v -> startActivity(new Intent(SignUpActivity.this,LoginActivity.class)));
 
     }
 

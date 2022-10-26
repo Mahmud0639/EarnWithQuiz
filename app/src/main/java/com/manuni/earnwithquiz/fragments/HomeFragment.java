@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater,container,false);
-        rewardedAd = new RewardedAd(requireContext(),"ca-app-pub-3940256099942544/5224354917");
+        rewardedAd = new RewardedAd(requireContext(),"ca-app-pub-6447793920864109/6776557805");
         rewardedAd.loadAd(new AdRequest.Builder().build(),new RewardedAdLoadCallback(){
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
@@ -125,7 +125,7 @@ public class HomeFragment extends Fragment {
         intent.setType("text/plain");
 
         String subject = "About Earn Money app";
-        String body = "This app will help you to get more earning in quickly. \nAnd also very easy to earn more.You can Download this app from this link\n\"https://play.google.com/store/apps/details?id= "+ BuildConfig.APPLICATION_ID;
+        String body = "This app will help you to get more earning in quickly. \nAnd also very easy to earn more.You can Download this app from this link:"+"\n"+"https://play.google.com/store/apps/details?id=" + getContext().getPackageName();
 
         intent.putExtra(Intent.EXTRA_SUBJECT,subject);
         intent.putExtra(Intent.EXTRA_TEXT,body);

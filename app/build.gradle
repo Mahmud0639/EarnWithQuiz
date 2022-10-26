@@ -13,8 +13,8 @@ android {
         applicationId "com.manuni.earnwithquiz"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -54,6 +54,7 @@ dependencies {
     implementation 'com.github.sharish:ShimmerRecyclerView:v1.3'
     implementation 'com.airbnb.android:lottie:5.0.3'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation 'androidx.work:work-runtime:2.7.1'
 
 }
 apply plugin: 'com.google.gms.google-services'
