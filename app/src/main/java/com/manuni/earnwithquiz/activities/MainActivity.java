@@ -1,6 +1,7 @@
 package com.manuni.earnwithquiz.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this, initializationStatus -> {
         });
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        binding.adView.loadAd(adRequest);
+       /* AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adView.loadAd(adRequest);*/
 
         auth = FirebaseAuth.getInstance();
 
@@ -109,6 +110,18 @@ public class MainActivity extends AppCompatActivity {
             auth.signOut();
             startActivity(new Intent(MainActivity.this,LoginActivity.class));
             finish();
+        }
+        if (item.getItemId()==R.id.refer){
+            startActivity(new Intent(MainActivity.this,ReferActivity.class));
+        }
+        if (item.getItemId()==R.id.rateApp){
+            Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());
+            Intent i = new Intent(Intent.ACTION_VIEW, uri);
+            try {
+                startActivity(i);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return super.onOptionsItemSelected(item);
     }

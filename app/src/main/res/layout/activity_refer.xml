@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ReferActivity">
+
+    <TextView
+        android:id="@+id/referTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_refer_code_1500_coins"
+        android:textSize="@dimen/_14font_mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_30mdp"
+        android:padding="@dimen/_8mdp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refer_code"
+        app:layout_constraintBottom_toTopOf="@id/referCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_8mdp"/>
+
+    <TextView
+        android:id="@+id/referCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10mdp"
+        android:layout_marginEnd="@dimen/_10mdp"
+        android:fontFamily="@font/b612"
+        android:text=""
+        android:textSize="@dimen/_15font_mdp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/referTxt"
+        app:layout_constraintBottom_toTopOf="@id/copyBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/copyBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copy"
+        android:layout_marginTop="@dimen/_10mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/referCode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

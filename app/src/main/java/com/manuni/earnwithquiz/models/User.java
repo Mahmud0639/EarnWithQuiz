@@ -1,8 +1,8 @@
 package com.manuni.earnwithquiz.models;
 
 public class User {
-    private String name, email, pass, profile, referCode;
-    private long coins = 45;
+    private String name, email, pass, profile, referCode,adminMessage = "";
+    private double coins = 0.00;
 
     public User() {
     }
@@ -46,11 +46,11 @@ public class User {
         this.referCode = referCode;
     }
 
-    public long getCoins() {
+    public double getCoins() {
         return coins;
     }
 
-    public void setCoins(long coins) {
+    public void setCoins(double coins) {
         this.coins = coins;
     }
 
@@ -61,4 +61,22 @@ public class User {
     public void setProfile(String profile) {
         this.profile = profile;
     }
+
+    public String getAdminMessage(){
+        return adminMessage;
+    }
+
+    public void setAdminMessage(String adminMessage){
+        this.adminMessage = adminMessage;
+    }
+
+/*    public String getCoins_taka(){
+        return coins_taka;
+    }
+
+    public void setCoins_taka(String coins_taka){
+        this.coins_taka = coins_taka;
+    }*/
+
+
 }

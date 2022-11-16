@@ -3,13 +3,21 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/feedback"
-        android:icon="@drawable/ic_heart"
-        android:title="@string/feedback"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_myexit"
         android:title="@string/logout"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/ic_heart"
+        android:title="@string/feedback"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/refer"
+        android:title="@string/refer_code_for_menu"
+        app:showAsAction="never"/>
+    <item android:id="@+id/rateApp"
+        android:title="@string/rate_app_for_menu"
+        app:showAsAction="never"/>
 </menu>

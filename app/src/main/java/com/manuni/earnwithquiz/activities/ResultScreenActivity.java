@@ -12,11 +12,13 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.manuni.earnwithquiz.databinding.ActivityResultScreenBinding;
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class ResultScreenActivity extends AppCompatActivity {
     ActivityResultScreenBinding binding;
     int Points = 10;
+    double taka;
     FirebaseFirestore database;
 
 
@@ -34,16 +36,19 @@ public class ResultScreenActivity extends AppCompatActivity {
         int totalQuestions = getIntent().getIntExtra("total", 0);
 
         int points = correctAnswers * Points;
-
+       taka = (double) points/1000;
 
         binding.scores.setText(String.format("%d/%d", correctAnswers, totalQuestions));
-        binding.earnedCoins.setText(String.valueOf(points));
+        binding.earnedCoins.setText(String.valueOf(Double.valueOf(taka)));
+
+        /*DecimalFormat format = new DecimalFormat("#.##");
+        double twoPointTaka = Double.parseDouble(format.format(taka));*/
 
 
 
         database.collection("users")
                     .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                    .update("coins", FieldValue.increment(points));
+                    .update("coins", FieldValue.increment(taka));
 
 
 

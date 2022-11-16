@@ -10,6 +10,7 @@
     android:layout_height="wrap_content"
     tools:context=".fragments.ProfileFragment">
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="@dimen/_90mdp"
@@ -77,6 +78,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileNameBox"
         app:layout_constraintVertical_bias="0.07999998" />
+    <TextView
+        android:id="@+id/adminMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/admin_message"
+        android:padding="@dimen/_3mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        app:layout_constraintTop_toBottomOf="@id/profileBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16font_mdp"/>
+
+    <TextView
+        android:id="@+id/adminMessageTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mdp"
+        android:layout_marginEnd="@dimen/_18mdp"
+        android:layout_marginBottom="@dimen/_5mdp"
+        android:padding="@dimen/_5mdp"
+        android:text=""
+        android:textColor="@color/red"
+        android:textSize="@dimen/_13font_mdp"
+        android:layout_marginTop="@dimen/_5mdp"
+        app:layout_constraintTop_toBottomOf="@id/adminMessage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/profilePlus"

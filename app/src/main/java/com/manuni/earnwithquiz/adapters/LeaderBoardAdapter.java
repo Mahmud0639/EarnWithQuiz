@@ -37,7 +37,9 @@ public class LeaderBoardAdapter extends RecyclerView.Adapter<LeaderBoardAdapter.
     public void onBindViewHolder(@NonNull LeaderBoardViewHolder holder, int position) {
         User user = users.get(position);
         holder.binding.name.setText(user.getName());
-        holder.binding.coins.setText(String.valueOf(user.getCoins()));
+        //holder.binding.coins.setText(String.valueOf(user.getCoins()));
+        holder.binding.coins.setText(String.format("%.2f",user.getCoins()));
+
         holder.binding.index.setText(String.format("#%d",position+1));
 
         try {

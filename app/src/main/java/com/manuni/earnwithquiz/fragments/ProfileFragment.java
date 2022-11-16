@@ -6,8 +6,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
@@ -24,18 +21,16 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
-import com.manuni.earnwithquiz.customdialogs.CustomProgressingProfile;
 import com.manuni.earnwithquiz.R;
-import com.manuni.earnwithquiz.models.User;
 import com.manuni.earnwithquiz.activities.MainActivity;
+import com.manuni.earnwithquiz.customdialogs.CustomProgressingProfile;
 import com.manuni.earnwithquiz.databinding.FragmentProfileBinding;
+import com.manuni.earnwithquiz.models.User;
 
 import java.util.Objects;
 
-public class  ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -46,19 +41,21 @@ public class  ProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-        FragmentProfileBinding binding;
-        FirebaseStorage storage;
-        FirebaseAuth auth;
-        FirebaseFirestore database;
-        User user;
-        Thread thread;
-        //ProgressDialog dialog;
-        CustomProgressingProfile dialog;
+
+    FragmentProfileBinding binding;
+    FirebaseStorage storage;
+    FirebaseAuth auth;
+    FirebaseFirestore database;
+    User user;
+    Thread thread;
+    //ProgressDialog dialog;
+    CustomProgressingProfile dialog;
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentProfileBinding.inflate(inflater,container,false);
+        binding = FragmentProfileBinding.inflate(inflater, container, false);
 
         dialog = new CustomProgressingProfile(getContext());
         //((AppCompatActivity) getActivity()).getSupportActionBar().hide();
@@ -75,7 +72,7 @@ public class  ProfileFragment extends Fragment {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_GET_CONTENT);
             intent.setType("image/*");
-            startActivityForResult(intent,32);
+            startActivityForResult(intent, 32);
         });
 
 
@@ -88,19 +85,19 @@ public class  ProfileFragment extends Fragment {
             ConnectivityManager manager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-            if (wifi.isConnected()){
-               setData();
-            }else if (mobile.isConnected()){
-              setData();
-            }else {
-                Snackbar.make(v,"Check your internet connection",Snackbar.LENGTH_LONG).show();
+            if (wifi.isConnected()) {
+                setData();
+            } else if (mobile.isConnected()) {
+                setData();
+            } else {
+                Snackbar.make(v, "Check your internet connection", Snackbar.LENGTH_LONG).show();
             }
 
         });
         database.collection("users")
                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                 .get().addOnSuccessListener(documentSnapshot -> {
-                    user = documentSnapshot.toObject(User.class);
+            user = documentSnapshot.toObject(User.class);
             try {
                 Glide.with(requireContext())
                         .load(user.getProfile())
@@ -109,7 +106,9 @@ public class  ProfileFragment extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-           binding.myName.setText(user.getName());
+            binding.myName.setText(user.getName());
+            binding.adminMessageTxt.setText(user.getAdminMessage());
+
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -122,12 +121,11 @@ public class  ProfileFragment extends Fragment {
     }
 
 
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         assert data != null;
-        if (data.getData() != null){
+        if (data.getData() != null) {
             Uri sFile = null;
             try {
                 sFile = data.getData();
@@ -158,13 +156,13 @@ public class  ProfileFragment extends Fragment {
     }
 
     private void startInBackgroundThread(Uri uri) {
-         thread = new Thread(new Runnable() {
+        thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     database.collection("users")
                             .document(FirebaseAuth.getInstance().getUid())
-                            .update("profile",uri.toString());
+                            .update("profile", uri.toString());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -173,7 +171,7 @@ public class  ProfileFragment extends Fragment {
         thread.start();
     }
 
-    private void setData(){
+    private void setData() {
         dialog.show();
         String name = binding.profileNameBox.getText().toString();
         binding.profileNameBox.setText("");
@@ -181,10 +179,10 @@ public class  ProfileFragment extends Fragment {
 
         database.collection("users")
                 .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                .update("name",name).addOnSuccessListener(aVoid -> {
+                .update("name", name).addOnSuccessListener(aVoid -> {
             dialog.dismiss();
             Toast.makeText(getContext(), "Profile updated", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getContext(),MainActivity.class));
+            startActivity(new Intent(getContext(), MainActivity.class));
             getActivity().finish();
 
         }).addOnFailureListener(new OnFailureListener() {

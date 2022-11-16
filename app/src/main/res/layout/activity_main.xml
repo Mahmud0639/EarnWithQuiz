@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".activities.MainActivity">
 
-    <com.google.android.gms.ads.AdView
+  <!--  <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
     <me.ibrahimsn.lib.SmoothBottomBar
         android:id="@+id/bottomBar"
@@ -38,6 +38,7 @@
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +48,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintBottom_toTopOf="@id/bottomBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">

@@ -132,7 +132,7 @@
                 android:hint="Refer Code (Optional)"
                 android:padding="@dimen/_10mdp"
                 android:paddingStart="@dimen/_10mdp"
-                android:inputType="phone"
+                android:inputType="textMultiLine"
                 android:drawableLeft="@drawable/refferfornew"
                 android:drawablePadding="@dimen/_10mdp"
                 android:textColorHint="@color/hint_color"

@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.manuni.earnwithquiz.customdialogs.CustomProgressDialogSignUp;
 import com.manuni.earnwithquiz.models.User;
@@ -100,6 +101,16 @@ public class SignUpActivity extends AppCompatActivity {
                         Intent intent = new Intent(SignUpActivity.this,WelcomeActivity.class);
                         intent.putExtra("name",binding.nameBox.getText().toString().trim());
                         startActivity(intent);
+                        if (referCode.isEmpty()){
+                            Toast.makeText(this, "You didn't use any refer code", Toast.LENGTH_SHORT).show();
+                        }else {
+                            database.collection("users")
+                                    .document(referCode)
+                                    .update("coins", FieldValue.increment(1500));
+                        }
+
+
+
                        // startActivity(new Intent(SignUpActivity.this,WelcomeActivity.class));
                         //Toast.makeText(SignUpActivity.this, "Success", Toast.LENGTH_SHORT).show();
                         finish();

@@ -97,31 +97,31 @@ public class SpinnerActivity extends AppCompatActivity {
 
     }
     void updateCash(int index){
-        long cash = 0;
+        double cash = 0.00;
         switch (index){
             case 0:
-                cash = 5;
+                cash = 0.05;
                 break;
             case 1:
-                cash = 10;
+                cash = 0.1;
                 break;
             case 2:
-                cash = 15;
+                cash = 0.15;
                 break;
             case 3:
-                cash = 20;
+                cash = 0.20;
                 break;
             case 4:
-                cash = 25;
+                cash = 0.25;
                 break;
             case 5:
-                cash = 30;
+                cash = 0.30;
                 break;
             case 6:
-                cash = 35;
+                cash = 0.35;
                 break;
             case 7:
-                cash = 0;
+                cash = 0.00;
                 break;
         }
         FirebaseFirestore database = FirebaseFirestore.getInstance();
