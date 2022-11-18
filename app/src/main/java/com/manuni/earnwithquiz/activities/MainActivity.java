@@ -13,23 +13,35 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.manuni.earnwithquiz.adapters.CategoryAdapter;
 import com.manuni.earnwithquiz.fragments.HomeFragment;
 import com.manuni.earnwithquiz.fragments.LeaderBoardsFragment;
 import com.manuni.earnwithquiz.fragments.ProfileFragment;
 import com.manuni.earnwithquiz.R;
 import com.manuni.earnwithquiz.fragments.WalletFragment;
 import com.manuni.earnwithquiz.databinding.ActivityMainBinding;
+import com.manuni.earnwithquiz.models.CategoryModel;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     FirebaseAuth auth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+
 
         MobileAds.initialize(this, initializationStatus -> {
         });
@@ -40,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         setSupportActionBar(binding.toolbar);
+
 
         try {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

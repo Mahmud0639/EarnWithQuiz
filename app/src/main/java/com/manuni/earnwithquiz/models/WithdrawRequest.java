@@ -14,6 +14,7 @@ public class WithdrawRequest {
 
 
 
+
     public WithdrawRequest(String userId, String payPalEmail, String myCoins, String mobile, String sentBy,String userEmail) {
         this.userId = userId;
         this.payPalEmail = payPalEmail;
@@ -78,4 +79,5 @@ public class WithdrawRequest {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
 }

@@ -54,7 +54,7 @@
     <string name="rules">আপনার প্রথম ক্যাশ আউটের টাকা পাওয়ার পরে পরবর্তী ক্যাশ আউটের চেষ্টা করুন।</string>
     <string name="paypal_email_address">PayPal Email Address</string>
     <string name="bkash_number">bKash Number</string>
-    <string name="send_request">Cash Out (10TK)</string>
+    <string name="send_request">Cash Out</string>
     <string name="send_requestTwentyThousand">Cash Out (25TK)</string>
     <string name="send_requestFortyThousand">Cash Out (50TK)</string>
     <string name="send_requestFiftyThousand">Cash Out (150TK)</string>

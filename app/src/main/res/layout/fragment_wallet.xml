@@ -72,6 +72,16 @@
         app:layout_constraintEnd_toEndOf="@+id/currentCoins"
         app:layout_constraintStart_toStartOf="@+id/currentCoins"
         app:layout_constraintTop_toBottomOf="@+id/currentCoins" />
+    <TextView
+        android:id="@+id/healthyAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/textView17"
+        app:layout_constraintStart_toStartOf="@id/view6"
+        app:layout_constraintEnd_toEndOf="@id/view6"
+        app:layout_constraintBottom_toBottomOf="@id/view6"
+        android:textColor="@color/red"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -146,73 +156,11 @@
         android:background="@drawable/send_req_btn_twenty"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/send_request"
-        android:layout_marginBottom="@dimen/_8mdp"
         android:textColor="@color/white"
-       app:layout_constraintBottom_toTopOf="@id/sendRequestForTwentyThousand"
         app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/editTextPhone2"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
-  <Button
-        android:id="@+id/sendRequestForTwentyThousand"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14mdp"
-        android:background="@drawable/send_req_btn_bg"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/send_requestTwentyThousand"
-        android:layout_marginBottom="@dimen/_8mdp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/sendRequestForFortyThousand"
-        app:layout_constraintEnd_toEndOf="@+id/sendRequest"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/sendRequest"
-        app:layout_constraintTop_toBottomOf="@+id/sendRequest" />
- <Button
-        android:id="@+id/sendRequestForFortyThousand"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14mdp"
-        android:background="@drawable/send_req_btn_forty"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/send_requestFortyThousand"
-        android:layout_marginBottom="@dimen/_8mdp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/sendRequestForFiftyThousand"
-        app:layout_constraintEnd_toEndOf="@+id/sendRequestForTwentyThousand"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/sendRequestForTwentyThousand"
-        app:layout_constraintTop_toBottomOf="@+id/sendRequestForTwentyThousand" />
- <Button
-        android:id="@+id/sendRequestForFiftyThousand"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14mdp"
-        android:background="@drawable/send_req_btn_fifty"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/send_requestFiftyThousand"
-        android:layout_marginBottom="@dimen/_8mdp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@id/sendRequestForOverTwoLakh"
-        app:layout_constraintEnd_toEndOf="@+id/sendRequestForFortyThousand"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/sendRequestForFortyThousand"
-        app:layout_constraintTop_toBottomOf="@+id/sendRequestForFortyThousand" />
-<Button
-        android:id="@+id/sendRequestForOverTwoLakh"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_14mdp"
-        android:background="@drawable/send_req_over_two_lakh"
-        android:fontFamily="@font/roboto_bold"
-        android:text="@string/send_requestOverTwoLakh"
-        android:layout_marginBottom="@dimen/_8mdp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sendRequestForFiftyThousand"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/sendRequestForFiftyThousand"
-        app:layout_constraintTop_toBottomOf="@+id/sendRequestForFiftyThousand" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="@dimen/_70mdp"

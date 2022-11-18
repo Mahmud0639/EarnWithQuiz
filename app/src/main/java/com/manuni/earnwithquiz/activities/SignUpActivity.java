@@ -106,7 +106,8 @@ public class SignUpActivity extends AppCompatActivity {
                         }else {
                             database.collection("users")
                                     .document(referCode)
-                                    .update("coins", FieldValue.increment(1500));
+                                    .update("coins", FieldValue.increment(5.00));
+
                         }
 
 

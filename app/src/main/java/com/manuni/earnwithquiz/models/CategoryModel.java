@@ -34,4 +34,5 @@ public class CategoryModel {
     public void setCategoryImage(String categoryImage) {
         this.categoryImage = categoryImage;
     }
+
 }

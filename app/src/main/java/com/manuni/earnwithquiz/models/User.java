@@ -69,6 +69,7 @@ public class User {
     public void setAdminMessage(String adminMessage){
         this.adminMessage = adminMessage;
     }
+    
 
 /*    public String getCoins_taka(){
         return coins_taka;
