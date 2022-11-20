@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/background_orang.xml" value="0.1675" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/emailfornew.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/game_2_button.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_bkash_taka.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_name.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_random_number_g.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_share.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_spin.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_spin_wheel.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/ic_spin_wheel_lucky.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/log_btn.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/passwordfornew.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/refferfornew.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_btn_bg.xml" value="0.142" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_btn_disable_bg.xml" value="0.142" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_btn_fifty.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_btn_forty.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_btn_twenty.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/send_req_over_two_lakh.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/spin_button_bg.xml" value="0.1905" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/drawable/uttonlon_edit_bg.xml" value="0.187" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_feedback.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_learn_more.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_main2.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_quiz.xml" value="0.18703703703703703" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_refer.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_result_screen.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_spinner.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/activity_withdraw_my_cash.xml" value="0.22" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/custom_progressing.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/custom_progressing_profile.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/custom_progressing_signup.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/cutom_progressing_wallet.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/demo_shimmer.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/fragment_leader_boards.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/fragment_wallet.xml" value="0.25" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/item_category.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/lucky_wheel_layout.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/layout/row_leaderboards.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/menu/home_menu.xml" value="0.209375" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
+        <entry key="..\:/EarnWithQuiz/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1445" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
