@@ -90,6 +90,7 @@ public class WalletFragment extends Fragment {
                 intentForWithdraw.putExtra("uEmail",user.getEmail());
                 intentForWithdraw.putExtra("uName",user.getName());
                 intentForWithdraw.putExtra("userCoins",user.getCoins());
+                intentForWithdraw.putExtra("limitStatus",user.getStatus());
                 getContext().startActivity(intentForWithdraw);
             }
 

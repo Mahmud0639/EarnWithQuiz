@@ -84,7 +84,7 @@ public class ResultScreenActivity extends AppCompatActivity {
 
 
         intent.putExtra(Intent.EXTRA_SUBJECT, "My Result");
-        intent.putExtra(Intent.EXTRA_TEXT, "Total Correct: " + myScores + "\nTotal Earned: " + myCoins + " Out of 50");
+        intent.putExtra(Intent.EXTRA_TEXT, "Total Correct: " + myScores + "\nTotal Earned: " + myCoins + " Out of 0.05 Taka");
         startActivity(Intent.createChooser(intent, "Share with"));
     }
 }

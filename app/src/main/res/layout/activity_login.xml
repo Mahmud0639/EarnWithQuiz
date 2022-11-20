@@ -91,7 +91,7 @@
                             android:layout_height="@dimen/_35mdp"
                             android:layout_marginTop="@dimen/_20mdp"
                             android:background="@drawable/edit_box"
-                            android:hint="password(6 digit)"
+                            android:hint="@string/password_6_digits"
                             android:padding="@dimen/_10mdp"
                             android:inputType="textPassword"
                             android:paddingStart="@dimen/_10mdp"

@@ -1,17 +1,20 @@
 package com.manuni.earnwithquiz.models;
 
 public class User {
-    private String name, email, pass, profile, referCode,adminMessage = "";
+    private String name, email, pass, profile, referCode,adminMessage = "",bKashNumber,uId,status = "No limit";
     private double coins = 0.00;
 
     public User() {
     }
 
-    public User(String name, String email, String pass, String referCode) {
+    public User(String name, String email, String pass, String referCode,String bKashNumber,String uId) {
         this.name = name;
         this.email = email;
         this.pass = pass;
         this.referCode = referCode;
+        this.bKashNumber = bKashNumber;
+        this.uId = uId;
+
     }
 
     public String getName() {
@@ -69,15 +72,28 @@ public class User {
     public void setAdminMessage(String adminMessage){
         this.adminMessage = adminMessage;
     }
-    
 
-/*    public String getCoins_taka(){
-        return coins_taka;
+    public String getbKashNumber() {
+        return bKashNumber;
     }
 
-    public void setCoins_taka(String coins_taka){
-        this.coins_taka = coins_taka;
-    }*/
+    public void setbKashNumber(String bKashNumber) {
+        this.bKashNumber = bKashNumber;
+    }
 
+    public String getuId() {
+        return uId;
+    }
 
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

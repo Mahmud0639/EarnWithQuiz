@@ -34,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        android:inputType="phone"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/takaUttolon"
         app:layout_constraintVertical_bias="0.16000003"

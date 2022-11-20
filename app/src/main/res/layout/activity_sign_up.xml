@@ -118,10 +118,29 @@
                 android:textColorHint="@color/hint_color"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_11font_mdp"
-                app:layout_constraintBottom_toTopOf="@id/referBox"
+                app:layout_constraintBottom_toTopOf="@id/bKashET"
                 app:layout_constraintEnd_toEndOf="@id/emailBox"
                 app:layout_constraintStart_toStartOf="@id/emailBox"
                 app:layout_constraintTop_toBottomOf="@id/emailBox" />
+            <EditText
+                android:id="@+id/bKashET"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_35mdp"
+                app:layout_constraintTop_toBottomOf="@id/passwordBox"
+                app:layout_constraintStart_toStartOf="@id/passwordBox"
+                app:layout_constraintEnd_toEndOf="@id/passwordBox"
+                app:layout_constraintBottom_toTopOf="@id/referBox"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:background="@drawable/edit_box"
+                android:hint="bKash Number"
+                android:padding="@dimen/_10mdp"
+                android:paddingStart="@dimen/_10mdp"
+                android:inputType="phone"
+                android:drawableLeft="@drawable/ic_bkash_taka"
+                android:drawablePadding="@dimen/_10mdp"
+                android:textColorHint="@color/hint_color"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11font_mdp"/>
 
             <EditText
                 android:id="@+id/referBox"
@@ -139,9 +158,9 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/_11font_mdp"
                 app:layout_constraintBottom_toTopOf="@id/loginId"
-                app:layout_constraintEnd_toEndOf="@id/passwordBox"
-                app:layout_constraintStart_toStartOf="@id/passwordBox"
-                app:layout_constraintTop_toBottomOf="@id/passwordBox" />
+                app:layout_constraintEnd_toEndOf="@id/bKashET"
+                app:layout_constraintStart_toStartOf="@id/bKashET"
+                app:layout_constraintTop_toBottomOf="@id/bKashET" />
 
 
             <Button

@@ -33,9 +33,9 @@
     <string name="instructions">Instructions :</string>
     <string name="choose_a_category">-Choose a Category</string>
     <string name="play_quiz">-Play Quiz</string>
-    <string name="get_coins">-Get Coins</string>
-    <string name="earn_money">-Earn Money</string>
-    <string name="spin_wheel">গেইম খেলুন-১</string>
+    <string name="get_coins">-Get Money</string>
+    <string name="earn_money">-Withdraw Money</string>
+    <string name="spin_wheel">গেইম খেলুন</string>
     <string name="game_2">গেইম খেলুন-২</string>
     <string name="share_this_app">শেয়ার করুন</string>
     <string name="todo5">TODO</string>
@@ -111,9 +111,9 @@
     <string name="agree1">Agree</string>
     <string name="deny2">Deny</string>
     <string name="how_to_play_quiz">How to play Quiz ?</string>
-    <string name="quiz_info">In order to play quiz, you have to select any one of the categories first. There will be five MCQ questions in each category. 50 coins will be found in five correct answer. There will be 10 coins for each correct answer. Each incorrect answer will be deducted by 10 coins.</string>
-    <string name="earn_more_info">To earn more money, you have to reach the destination coins very fast. To reach the destination coins very fast you can play game. You can earn as much as you play and as frequency for every withdraw.</string>
-    <string name="withdraw_way">You must earn at least 10,000 coins to withdraw. After earning 10,000 coins you have to choose one of the given options. If you want to withdraw using PayPal, provide PayPal email address. And if you want to withdraw using bKash number, provide bKash number.</string>
+    <string name="quiz_info">In order to play quiz, you have to select any one of the categories first. There will be five MCQ questions in each category. 0.05 taka will be found in five correct answer. There will be 0.01 taka for each correct answer. Each incorrect answer will be deducted by 0.01 taka.</string>
+    <string name="earn_more_info">To earn more money, you have to reach the destination amounts of taka very fast. To reach the destination amounts of taka very fast you can play game. You can earn as much as you play and as frequency for every withdraw.</string>
+    <string name="withdraw_way">You must earn at least 15 taka to withdraw. After earning 15 taka you have to choose one of the given options. If you want to withdraw using PayPal, provide PayPal email address. And if you want to withdraw using bKash number, provide bKash number.</string>
     <string name="play_quiz_info">Play more Quiz and earn more money. We will send your withdraw within 3 days.</string>
     <string name="learn_more">Learn more...</string>
     <string name="let_s_start_earning">Let\'s Start Earning</string>
@@ -125,10 +125,12 @@
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="copy">Copy</string>
-    <string name="account_refer_code_1500_coins">নতুন Account খুলে দিতে আপনার Refer Code টি ব্যাবহার করুন। আর সাথে সাথে পেয়ে যান 1500 coins.</string>
+    <string name="account_refer_code_1500_coins">নতুন Account খুলে দিতে আপনার Refer Code টি ব্যাবহার করুন। আর সাথে সাথে পেয়ে যান ২ টাকা।</string>
     <string name="refer_code">নিচের Refer Code টি ব্যাবহার করুনঃ</string>
     <string name="refer_code_for_menu">Refer Code</string>
     <string name="rate_app_for_menu">Rate App</string>
     <string name="admin_message">Admin Message</string>
+    <string name="password_6_digits">password(6 digits)</string>
+    <string name="earn_with_learn">Earn with learn</string>
 
 </resources>

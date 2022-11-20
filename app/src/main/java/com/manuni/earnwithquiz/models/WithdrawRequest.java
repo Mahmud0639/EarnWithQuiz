@@ -11,17 +11,19 @@ public class WithdrawRequest {
     private String myCoins;
     private String mobile;
     private String userEmail;
+    private String status;
 
 
 
 
-    public WithdrawRequest(String userId, String payPalEmail, String myCoins, String mobile, String sentBy,String userEmail) {
+    public WithdrawRequest(String userId, String payPalEmail, String myCoins, String mobile, String sentBy,String userEmail,String status) {
         this.userId = userId;
         this.payPalEmail = payPalEmail;
         this.sentBy = sentBy;
         this.myCoins = myCoins;
         this.mobile = mobile;
         this.userEmail = userEmail;
+        this.status = status;
 
     }
     public WithdrawRequest() {
@@ -80,4 +82,11 @@ public class WithdrawRequest {
         this.createdAt = createdAt;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

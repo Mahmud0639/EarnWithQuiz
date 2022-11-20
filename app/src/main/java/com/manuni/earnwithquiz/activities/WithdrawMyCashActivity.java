@@ -16,7 +16,7 @@ import java.util.Objects;
 
 public class WithdrawMyCashActivity extends AppCompatActivity {
     ActivityWithdrawMyCashBinding binding;
-    String userName, userPaypal, userEmail, userPhoneNumber, userId, userWithdrawCoins;
+    String userName, userPaypal, userEmail, userPhoneNumber, userId, userWithdrawCoins,limitMyStatus;
     double userCoins;
     FirebaseFirestore database;
 
@@ -35,6 +35,7 @@ public class WithdrawMyCashActivity extends AppCompatActivity {
         userPhoneNumber = getIntent().getStringExtra("phoneNumber");
         userId = getIntent().getStringExtra("uid");
         userCoins = getIntent().getDoubleExtra("userCoins", 0);
+        limitMyStatus = getIntent().getStringExtra("limitStatus");
 
 
         binding.appCompatButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +53,7 @@ public class WithdrawMyCashActivity extends AppCompatActivity {
                         if (userCoins >= Double.parseDouble(userWithdrawCoins)) {
                             binding.withdrawProcessing.setVisibility(View.VISIBLE);
                             binding.withdrawProcessing.playAnimation();
-                            WithdrawRequest request = new WithdrawRequest(userId, userEmail, userWithdrawCoins, userPhoneNumber, userName, userEmail);
+                            WithdrawRequest request = new WithdrawRequest(userId, userEmail, userWithdrawCoins, userPhoneNumber, userName, userEmail,limitMyStatus);
                             database.collection("withdraws")
                                     .document(userId)
                                     .set(request).addOnSuccessListener(aVoid -> {

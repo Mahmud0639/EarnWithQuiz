@@ -25,6 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseFirestore database;
    // ProgressDialog dialog;
    CustomProgressDialogSignUp dialog;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,10 @@ public class SignUpActivity extends AppCompatActivity {
             binding.passwordBox.setError("Password required");
             return;
         }
+        if (binding.bKashET.getText().toString().isEmpty()){
+            binding.bKashET.setError("bKash required");
+            return;
+        }
         ConnectivityManager manager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         @SuppressLint("MissingPermission") NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         @SuppressLint("MissingPermission") NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
@@ -81,18 +86,21 @@ public class SignUpActivity extends AppCompatActivity {
     private void check(){
         dialog.show();
 
-        String email, pass, name, referCode;
+        String email, pass, name, referCode,bkashNumber;
         email = binding.emailBox.getText().toString().trim();
         pass = binding.passwordBox.getText().toString().trim();
         name = binding.nameBox.getText().toString().trim();
         referCode = binding.referBox.getText().toString().trim();
+        bkashNumber = binding.bKashET.getText().toString().trim();
+        //userId = auth.getUid();
 
-        User user = new User(name, email, pass, referCode);
+       // User user = new User(name, email, pass, referCode,bkashNumber,userId);
 
         auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 dialog.dismiss();
-                String uid = Objects.requireNonNull(task.getResult().getUser()).getUid();
+                 uid = Objects.requireNonNull(task.getResult().getUser()).getUid();
+                User user = new User(name, email, pass, referCode,bkashNumber,uid);
                 database
                         .collection("users")
                         .document(uid)
