@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/playQuizTxt"
                 android:layout_width="wrap_content"
@@ -45,13 +45,14 @@
                 android:paddingEnd="@dimen/_8mdp"
                 android:gravity="left"
                 android:textSize="@dimen/_13font_mdp"
-                android:text="@string/quiz_info"/>
+                android:text="@string/quiz_info"
+                tools:ignore="RtlHardcoded" />
 
             <TextView
                 android:id="@+id/howEarnMore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How to earn more ?"
+                android:text="@string/how_to_earn_more"
                 android:textColor="@color/result_text_color"
                 android:textSize="@dimen/_16font_mdp"
                 android:fontFamily="@font/roboto_bold"
@@ -83,7 +84,7 @@
                 android:id="@+id/howWithdraw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How to Withdraw ?"
+                android:text="@string/how_to_withdraw"
                 android:textColor="@color/result_text_color"
                 app:layout_constraintTop_toBottomOf="@id/earnMoreId"
                 app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +108,8 @@
                 android:paddingStart="@dimen/_15mdp"
                 android:paddingBottom="@dimen/_5mdp"
                 android:paddingTop="@dimen/_5mdp"
-                android:paddingEnd="@dimen/_8mdp"/>
+                android:paddingEnd="@dimen/_8mdp"
+                tools:ignore="RtlHardcoded" />
             <Button
                 android:id="@+id/gotItBtn"
                 android:layout_width="wrap_content"
@@ -115,7 +117,7 @@
                 app:layout_constraintTop_toBottomOf="@id/withdrawInfo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:text="Ok, I got it !"
+                android:text="@string/ok_i_got_it"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:paddingStart="@dimen/_35mdp"

@@ -15,7 +15,7 @@
         app:layout_constraintBottom_toBottomOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/welcomeTxt"
@@ -99,7 +99,8 @@
                 android:paddingTop="@dimen/_8mdp"
                 android:paddingBottom="@dimen/_8mdp"
                 android:paddingStart="@dimen/_17mdp"
-                android:paddingEnd="@dimen/_8mdp"/>
+                android:paddingEnd="@dimen/_8mdp"
+                tools:ignore="RtlHardcoded" />
             <TextView
                 android:id="@+id/learnMore"
                 android:layout_width="wrap_content"

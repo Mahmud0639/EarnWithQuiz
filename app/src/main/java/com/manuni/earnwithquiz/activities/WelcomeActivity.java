@@ -37,7 +37,11 @@ public class WelcomeActivity extends AppCompatActivity {
         binding.earningBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
+                try {
+                    startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 finish();
             }
         });
@@ -48,7 +52,11 @@ public class WelcomeActivity extends AppCompatActivity {
                startActivity(new Intent(WelcomeActivity.this,LearnMoreActivity.class));
                 Intent intent = new Intent(WelcomeActivity.this,LearnMoreActivity.class);
                 intent.putExtra("myName",welcomeMyName);
-                startActivity(intent);
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
         });

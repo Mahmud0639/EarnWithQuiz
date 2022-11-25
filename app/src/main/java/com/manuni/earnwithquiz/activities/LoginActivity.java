@@ -56,7 +56,11 @@ public class   LoginActivity extends AppCompatActivity {
         binding.linearLayoutForSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+                try {
+                    startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 finish();
             }
         });
@@ -90,7 +94,11 @@ public class   LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (auth.getCurrentUser()!= null){
-            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            try {
+                startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             finish();
         }
     }
@@ -106,7 +114,11 @@ public class   LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     dialog.dismiss();
-                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    try {
+                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
 
                     //Toast.makeText(LoginActivity.this, "Successfully Logged In", Toast.LENGTH_SHORT).show();
                 }

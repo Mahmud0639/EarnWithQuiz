@@ -53,7 +53,6 @@
     <string name="HowRequiredCoins">২৪ ঘন্টা অপেক্ষা করুন ক্যাশ আউটের পরে</string>
     <string name="rules">আপনার প্রথম ক্যাশ আউটের টাকা পাওয়ার পরে পরবর্তী ক্যাশ আউটের চেষ্টা করুন।</string>
     <string name="paypal_email_address">PayPal Email Address</string>
-    <string name="bkash_number">bKash Number</string>
     <string name="send_request">Cash Out</string>
     <string name="send_requestTwentyThousand">Cash Out (25TK)</string>
     <string name="send_requestFortyThousand">Cash Out (50TK)</string>
@@ -125,12 +124,27 @@
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
     <string name="copy">Copy</string>
-    <string name="account_refer_code_1500_coins">নতুন Account খুলে দিতে আপনার Refer Code টি ব্যাবহার করুন। আর সাথে সাথে পেয়ে যান ২ টাকা।</string>
+    <string name="account_refer_code_1500_coins">নতুন Account খুলে দিতে আপনার Refer Code টি ব্যাবহার করুন। আর সাথে সাথে পেয়ে যান ৫ টাকা।</string>
     <string name="refer_code">নিচের Refer Code টি ব্যাবহার করুনঃ</string>
     <string name="refer_code_for_menu">Refer Code</string>
     <string name="rate_app_for_menu">Rate App</string>
     <string name="admin_message">Admin Message</string>
     <string name="password_6_digits">password(6 digits)</string>
-    <string name="earn_with_learn">Earn with learn</string>
+    <string name="earn_with_learn">আপনি ৫ টাকা বোনাস পেয়েছেন</string>
+    <string name="refer_rules">বিঃদ্রঃ-রেফারের টাকা শুধুমাত্র তখনই উত্তোলন করতে পারবেন যখন আপনার রেফারকৃত ইউজার কমপক্ষে একবার উইথড্র করবে।</string>
+    <string name="bkash_number">bKash Number</string>
+    <string name="login">LOGIN</string>
+    <string name="password_6_digit">password(6 digit)</string>
+    <string name="by_signing_up_you_are_agreeing_to_our_terms_of_service">By signing up you are agreeing to our terms of service</string>
+    <string name="how_to_earn_more">How to earn more ?</string>
+    <string name="how_to_withdraw">How to Withdraw ?</string>
+    <string name="ok_i_got_it">OK, I got it !</string>
+    <string name="log_in">Log In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="please_sign_up_at_first_to_continue">Please Sign Up at first to continue.</string>
+    <string name="taka_uttolon_korun">টাকা উত্তোলন করুন</string>
+    <string name="amount_taka">Amount Taka</string>
+    <string name="cash_out_for_bkash">Cash Out</string>
+
 
 </resources>

@@ -2,7 +2,7 @@ package com.manuni.earnwithquiz.models;
 
 public class User {
     private String name, email, pass, profile, referCode,adminMessage = "",bKashNumber,uId,status = "No limit";
-    private double coins = 0.00;
+    private double coins = 5.00;
 
     public User() {
     }

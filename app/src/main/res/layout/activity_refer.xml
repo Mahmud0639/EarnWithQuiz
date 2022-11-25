@@ -17,6 +17,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_30mdp"
         android:padding="@dimen/_8mdp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refer_rules"
+        app:layout_constraintTop_toBottomOf="@id/referTxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:padding="@dimen/_8mdp"
+        android:textColor="@color/red"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

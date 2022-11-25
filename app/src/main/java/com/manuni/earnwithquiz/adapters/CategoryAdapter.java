@@ -27,7 +27,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.manuni.earnwithquiz.R;
 import com.manuni.earnwithquiz.activities.QuizActivity;
 import com.manuni.earnwithquiz.models.CategoryModel;
-import com.manuni.earnwithquiz.models.User;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -59,63 +58,66 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         } catch (Exception e) {
             e.printStackTrace();
         }
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
 
 
 
-                ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-                NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-                NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo wifi = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            NetworkInfo mobile = manager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-                if (wifi.isConnected()) {
-                    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-                    firestore.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+            if (wifi.isConnected()) {
+                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+                firestore.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                        .get().addOnSuccessListener(documentSnapshot -> {
                            String data = documentSnapshot.getString("status");
 
                             assert data != null;
                             if (data.equals("limit")){
-                                Toast.makeText(context, "You are in limit state", Toast.LENGTH_SHORT).show();
-                           }else {
+                                try {
+                                    Toast.makeText(context, "You are in limit state", Toast.LENGTH_SHORT).show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                            }else {
                                 @SuppressLint("WifiManagerPotentialLeak") WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
                                 int numberOfLevels = 5;
                                 WifiInfo wifiInfo = wifiManager.getConnectionInfo();
                                 int level = WifiManager.calculateSignalLevel(wifiInfo.getRssi(), numberOfLevels);
 
                                 if (level < 2) {
-                                    Snackbar.make(v, "Your internet is unstable", Snackbar.LENGTH_LONG).show();
+                                    try {
+                                        Snackbar.make(v, "Your internet is unstable", Snackbar.LENGTH_LONG).show();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
                                 } else {
                                     Intent intent = new Intent(context, QuizActivity.class);
                                     intent.putExtra("catId", model.getCategoryId());
-                                    context.startActivity(intent);
+                                    try {
+                                        context.startActivity(intent);
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
 
                                 }
                             }
-                        }
-                    });
+                        });
 
 
-
-
-
-
-
-
-                } else if (mobile.isConnected()) {
-                    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-                    firestore.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                            .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+            } else if (mobile.isConnected()) {
+                FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+                firestore.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                        .get().addOnSuccessListener(documentSnapshot -> {
                             String data = documentSnapshot.getString("status");
 
                             assert data != null;
                             if (data.equals("limit")){
-                                Toast.makeText(context, "You are in limit state", Toast.LENGTH_SHORT).show();
+                                try {
+                                    Toast.makeText(context, "You are in limit state", Toast.LENGTH_SHORT).show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                             }else {
 
                                 TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
@@ -126,7 +128,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                                     case TelephonyManager.NETWORK_TYPE_CDMA:
                                     case TelephonyManager.NETWORK_TYPE_1xRTT:
                                     case TelephonyManager.NETWORK_TYPE_IDEN: {
-                                        Snackbar.make(v, "Your network is unstable or 2G", Snackbar.LENGTH_LONG).show();
+                                        try {
+                                            Snackbar.make(v, "Your network is unstable or 2G", Snackbar.LENGTH_LONG).show();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                         break;
                                     }
                                     case TelephonyManager.NETWORK_TYPE_UMTS:
@@ -138,52 +144,65 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                                     case TelephonyManager.NETWORK_TYPE_EVDO_B:
                                     case TelephonyManager.NETWORK_TYPE_EHRPD:
                                     case TelephonyManager.NETWORK_TYPE_HSPAP: {
-                                        Snackbar.make(v, "Your network is unstable or 3G", Snackbar.LENGTH_LONG).show();
+                                        try {
+                                            Snackbar.make(v, "Your network is unstable or 3G", Snackbar.LENGTH_LONG).show();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                         break;
                                     }
                                     case TelephonyManager.NETWORK_TYPE_LTE: {
                                         Intent intent = new Intent(context, QuizActivity.class);
                                         intent.putExtra("catId", model.getCategoryId());
-                                        context.startActivity(intent);
+                                        try {
+                                            context.startActivity(intent);
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
                                         break;
                                     }
                                     default:
-                                        Snackbar.make(v, "Your network is unknown", Snackbar.LENGTH_LONG).show();
+                                        try {
+                                            Snackbar.make(v, "Your network is unknown", Snackbar.LENGTH_LONG).show();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
 
                                 }
                             }
-                        }
-                    });
+                        });
 
 
 
 
-                } else if (wifi.isFailover() || mobile.isFailover()) {
+            } else if (wifi.isFailover() || mobile.isFailover()) {
+                try {
                     Snackbar.make(v, "Check your internet connection to further proceed", Snackbar.LENGTH_LONG).show();
-                } else if (wifi.isAvailable() || mobile.isAvailable()) {
-                    Snackbar.make(v, "Check your internet connection to further proceed", Snackbar.LENGTH_LONG).show();
-                } else if (wifi.isConnectedOrConnecting()) {
-                    Snackbar.make(v, "Your internet is very slow to load", Snackbar.LENGTH_LONG).show();
-                } else {
-                    Snackbar.make(v, "Check your internet connection to further proceed", Snackbar.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-
+            } else if (wifi.isAvailable() || mobile.isAvailable()) {
+                try {
+                    Snackbar.make(v, "Check your internet connection to further proceed", Snackbar.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else if (wifi.isConnectedOrConnecting()) {
+                try {
+                    Snackbar.make(v, "Your internet is very slow to load", Snackbar.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            } else {
+                try {
+                    Snackbar.make(v, "Check your internet connection to further proceed", Snackbar.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         });
     }
-  /*  private void checkLimit(){
-        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-        firestore.collection("users").
-                document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                .get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-            }
-        });
-
-
-    }*/
 
     @Override
     public int getItemCount() {

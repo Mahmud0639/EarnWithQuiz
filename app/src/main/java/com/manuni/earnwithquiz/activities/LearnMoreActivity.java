@@ -32,7 +32,11 @@ public class LearnMoreActivity extends AppCompatActivity {
         binding.gotItBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LearnMoreActivity.this,WelcomeActivity.class));
+                try {
+                    startActivity(new Intent(LearnMoreActivity.this,WelcomeActivity.class));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                /* Intent intent = new Intent(LearnMoreActivity.this,WelcomeActivity.class);
                 intent.putExtra("soName",mystringName);
                 startActivity(intent);

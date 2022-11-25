@@ -80,7 +80,11 @@ public class WalletFragment extends Fragment {
         binding.sendRequest.setOnClickListener(v -> {
             String phoneNumber =  binding.editTextPhone2.getText().toString().trim();
             if (binding.paypalEmailBox.getText().toString().isEmpty() && binding.editTextPhone2.getText().toString().isEmpty()) {
-                Toast.makeText(getContext(), "You should select one of them above", Toast.LENGTH_SHORT).show();
+                try {
+                    Toast.makeText(getContext(), "You should select one of them above", Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 return;
             }else {
                 Intent intentForWithdraw = new Intent(getContext(), WithdrawMyCashActivity.class);
@@ -91,7 +95,11 @@ public class WalletFragment extends Fragment {
                 intentForWithdraw.putExtra("uName",user.getName());
                 intentForWithdraw.putExtra("userCoins",user.getCoins());
                 intentForWithdraw.putExtra("limitStatus",user.getStatus());
-                getContext().startActivity(intentForWithdraw);
+                try {
+                    getContext().startActivity(intentForWithdraw);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
 
         });

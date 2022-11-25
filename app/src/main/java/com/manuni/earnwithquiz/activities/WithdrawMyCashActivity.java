@@ -66,7 +66,11 @@ public class WithdrawMyCashActivity extends AppCompatActivity {
                                         .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
                                         .update("coins", currentCoins);
 
-                                startActivity(new Intent(WithdrawMyCashActivity.this, MainActivity.class));
+                                try {
+                                    startActivity(new Intent(WithdrawMyCashActivity.this, MainActivity.class));
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
                                 finish();
                             });
                         } else {

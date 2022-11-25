@@ -56,7 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.content,new HomeFragment());
+            try {
+                transaction.replace(R.id.content,new HomeFragment());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,16 +120,28 @@ public class MainActivity extends AppCompatActivity {
 
         if (item.getItemId()==R.id.feedback){
 
-            startActivity(new Intent(MainActivity.this,FeedbackActivity.class));
+            try {
+                startActivity(new Intent(MainActivity.this,FeedbackActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
         if (item.getItemId()==R.id.logout){
             auth.signOut();
-            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            try {
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             finish();
         }
         if (item.getItemId()==R.id.refer){
-            startActivity(new Intent(MainActivity.this,ReferActivity.class));
+            try {
+                startActivity(new Intent(MainActivity.this,ReferActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         if (item.getItemId()==R.id.rateApp){
             Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName());

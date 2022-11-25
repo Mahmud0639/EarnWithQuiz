@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
 
             <TextView
@@ -69,7 +69,7 @@
                 android:background="@drawable/edit_box"
                 android:hint="@string/full_name"
                 android:drawablePadding="@dimen/_10mdp"
-                android:drawableLeft="@drawable/ic_name"
+                android:drawableStart="@drawable/ic_name"
                 android:inputType="text"
                 android:textColor="@color/white"
                 android:padding="@dimen/_10mdp"
@@ -80,7 +80,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/loginIcon" />
+                app:layout_constraintTop_toBottomOf="@+id/loginIcon"
+                android:autofillHints=""
+                tools:ignore="RtlSymmetry" />
 
             <EditText
                 android:id="@+id/emailBox"
@@ -93,7 +95,7 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white"
                 android:paddingStart="@dimen/_10mdp"
-                android:drawableLeft="@drawable/emailfornew"
+                android:drawableStart="@drawable/emailfornew"
                 android:drawablePadding="@dimen/_10mdp"
                 android:textColorHint="@color/hint_color"
                 android:textSize="@dimen/_11font_mdp"
@@ -101,7 +103,9 @@
                 app:layout_constraintEnd_toEndOf="@id/nameBox"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/nameBox"
-                app:layout_constraintTop_toBottomOf="@id/nameBox" />
+                app:layout_constraintTop_toBottomOf="@id/nameBox"
+                tools:ignore="RtlSymmetry"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/passwordBox"
@@ -109,11 +113,11 @@
                 android:layout_height="@dimen/_35mdp"
                 android:layout_marginTop="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="password(6 digit)"
+                android:hint="@string/password_6_digit"
                 android:padding="@dimen/_10mdp"
                 android:paddingStart="@dimen/_10mdp"
                 android:drawablePadding="@dimen/_10mdp"
-                android:drawableLeft="@drawable/passwordfornew"
+                android:drawableStart="@drawable/passwordfornew"
                 android:inputType="textPassword"
                 android:textColorHint="@color/hint_color"
                 android:textColor="@color/white"
@@ -121,7 +125,9 @@
                 app:layout_constraintBottom_toTopOf="@id/bKashET"
                 app:layout_constraintEnd_toEndOf="@id/emailBox"
                 app:layout_constraintStart_toStartOf="@id/emailBox"
-                app:layout_constraintTop_toBottomOf="@id/emailBox" />
+                app:layout_constraintTop_toBottomOf="@id/emailBox"
+                tools:ignore="RtlSymmetry"
+                android:autofillHints="" />
             <EditText
                 android:id="@+id/bKashET"
                 android:layout_width="0dp"
@@ -132,15 +138,17 @@
                 app:layout_constraintBottom_toTopOf="@id/referBox"
                 android:layout_marginTop="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="bKash Number"
+                android:hint="@string/bkash_number"
                 android:padding="@dimen/_10mdp"
                 android:paddingStart="@dimen/_10mdp"
                 android:inputType="phone"
-                android:drawableLeft="@drawable/ic_bkash_taka"
+                android:drawableStart="@drawable/ic_bkash_taka"
                 android:drawablePadding="@dimen/_10mdp"
                 android:textColorHint="@color/hint_color"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_11font_mdp"/>
+                android:textSize="@dimen/_11font_mdp"
+                tools:ignore="RtlSymmetry"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/referBox"
@@ -148,11 +156,11 @@
                 android:layout_height="@dimen/_35mdp"
                 android:layout_marginTop="@dimen/_10mdp"
                 android:background="@drawable/edit_box"
-                android:hint="Refer Code (Optional)"
+                android:hint="@string/refer_code_optional"
                 android:padding="@dimen/_10mdp"
                 android:paddingStart="@dimen/_10mdp"
                 android:inputType="textMultiLine"
-                android:drawableLeft="@drawable/refferfornew"
+                android:drawableStart="@drawable/refferfornew"
                 android:drawablePadding="@dimen/_10mdp"
                 android:textColorHint="@color/hint_color"
                 android:textColor="@color/white"
@@ -160,7 +168,9 @@
                 app:layout_constraintBottom_toTopOf="@id/loginId"
                 app:layout_constraintEnd_toEndOf="@id/bKashET"
                 app:layout_constraintStart_toStartOf="@id/bKashET"
-                app:layout_constraintTop_toBottomOf="@id/bKashET" />
+                app:layout_constraintTop_toBottomOf="@id/bKashET"
+                tools:ignore="RtlSymmetry"
+                android:autofillHints="" />
 
 
             <Button
@@ -169,7 +179,7 @@
                 android:layout_height="@dimen/_38mdp"
                 android:layout_marginTop="@dimen/_28mdp"
                 android:background="@drawable/log_btn"
-                android:text="Sign Up"
+                android:text="@string/sign_up"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/referBox"
@@ -193,7 +203,7 @@
                     android:id="@+id/create"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Already have an account"
+                    android:text="@string/already_have_an_account"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
                     android:layout_marginEnd="@dimen/_5mdp"
@@ -204,7 +214,7 @@
                     android:id="@+id/login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LOGIN"
+                    android:text="@string/login"
                     android:layout_gravity="center"
                     android:layout_marginEnd="@dimen/_5mdp"
                     android:fontFamily="@font/roboto_bold"
@@ -219,7 +229,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30mdp"
                 android:fontFamily="@font/roboto_light"
-                android:text="By signing up you are agreeing to our terms of service"
+                android:text="@string/by_signing_up_you_are_agreeing_to_our_terms_of_service"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_9font_mdp"
                 app:layout_constraintEnd_toEndOf="parent"

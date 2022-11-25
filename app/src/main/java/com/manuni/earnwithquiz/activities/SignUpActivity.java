@@ -38,9 +38,6 @@ public class SignUpActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseFirestore.getInstance();
 
-        /*dialog = new ProgressDialog(this);
-        dialog.setTitle("We're Creating Your Account");
-        dialog.setMessage("Signing Up...");*/
 
         binding.loginId.setOnClickListener(v -> {
             submitMe();
@@ -92,9 +89,7 @@ public class SignUpActivity extends AppCompatActivity {
         name = binding.nameBox.getText().toString().trim();
         referCode = binding.referBox.getText().toString().trim();
         bkashNumber = binding.bKashET.getText().toString().trim();
-        //userId = auth.getUid();
 
-       // User user = new User(name, email, pass, referCode,bkashNumber,userId);
 
         auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
@@ -108,7 +103,11 @@ public class SignUpActivity extends AppCompatActivity {
                     if (task1.isSuccessful()){
                         Intent intent = new Intent(SignUpActivity.this,WelcomeActivity.class);
                         intent.putExtra("name",binding.nameBox.getText().toString().trim());
-                        startActivity(intent);
+                        try {
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                         if (referCode.isEmpty()){
                             Toast.makeText(this, "You didn't use any refer code", Toast.LENGTH_SHORT).show();
                         }else {
@@ -118,10 +117,6 @@ public class SignUpActivity extends AppCompatActivity {
 
                         }
 
-
-
-                       // startActivity(new Intent(SignUpActivity.this,WelcomeActivity.class));
-                        //Toast.makeText(SignUpActivity.this, "Success", Toast.LENGTH_SHORT).show();
                         finish();
                     }
                     else {

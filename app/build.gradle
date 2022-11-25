@@ -14,8 +14,8 @@ android {
         applicationId "com.manuni.earnwithquiz"
         minSdkVersion 21
         targetSdkVersion 32
-        versionCode 5
-        versionName "1.4"
+        versionCode 7
+        versionName "1.6"
         multiDexEnabled true
 
 

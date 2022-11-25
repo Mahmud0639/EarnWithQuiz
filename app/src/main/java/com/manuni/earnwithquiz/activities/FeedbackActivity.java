@@ -50,7 +50,11 @@ public class FeedbackActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"bappimatubber1997@gmail.com"});
         intent.putExtra(Intent.EXTRA_SUBJECT,"Feedback for this app");
         intent.putExtra(Intent.EXTRA_TEXT,"Name: " + name + "\nMessage: "+feedback);
-        startActivity(Intent.createChooser(intent, "Feedback With"));
+        try {
+            startActivity(Intent.createChooser(intent, "Feedback With"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

@@ -16,6 +16,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FieldValue;
@@ -83,17 +84,36 @@ public class HomeFragment extends Fragment {
         binding.categoryList.setLayoutManager(new GridLayoutManager(getContext(),2));
         binding.categoryList.setAdapter(adapter);
         binding.spinWheelBtnId.setOnClickListener(v -> {
-            if (mRewardedAd != null){
-                mRewardedAd.show(requireActivity(), rewardItem -> {
-                    database.collection("users")
-                            .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
-                            .update("coins", FieldValue.increment(rewardItem.getAmount()/100));
-                    startActivity(new Intent(getContext(), SpinnerActivity.class));
-                });
-            }
-            else {
-                Toast.makeText(getContext(), "Sorry, No Ad is available", Toast.LENGTH_SHORT).show();
-            }
+            database.collection("users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                @Override
+                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                  String limitStatus =  documentSnapshot.getString("status");
+                  if (limitStatus.equals("limit")){
+                      Toast.makeText(getContext(), "You are out of bound.", Toast.LENGTH_SHORT).show();
+                  }else {
+                      if (mRewardedAd != null){
+                          mRewardedAd.show(requireActivity(), rewardItem -> {
+                              database.collection("users")
+                                      .document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()))
+                                      .update("coins", FieldValue.increment(rewardItem.getAmount()/100));
+                              try {
+                                  startActivity(new Intent(getContext(), SpinnerActivity.class));
+                              } catch (Exception e) {
+                                  e.printStackTrace();
+                              }
+                          });
+                      }
+                      else {
+                          try {
+                              Toast.makeText(getContext(), "Sorry, No Ad is available", Toast.LENGTH_SHORT).show();
+                          } catch (Exception e) {
+                              e.printStackTrace();
+                          }
+                      }
+                  }
+                }
+            });
+
 
 
         });
@@ -111,6 +131,10 @@ public class HomeFragment extends Fragment {
         intent.putExtra(Intent.EXTRA_SUBJECT,subject);
         intent.putExtra(Intent.EXTRA_TEXT,body);
 
-        startActivity(Intent.createChooser(intent,"Share with"));
+        try {
+            startActivity(Intent.createChooser(intent,"Share with"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -109,12 +109,7 @@ public class ProfileFragment extends Fragment {
             binding.myName.setText(user.getName());
             binding.adminMessageTxt.setText(user.getAdminMessage());
 
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e -> Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show());
 
 
         return binding.getRoot();
@@ -137,15 +132,7 @@ public class ProfileFragment extends Fragment {
                     .child(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
             reference.putFile(sFile).addOnSuccessListener(taskSnapshot -> reference.getDownloadUrl().addOnSuccessListener(uri -> {
                 startInBackgroundThread(uri);
-               /* try {
-                    database.collection("users")
-                            .document(FirebaseAuth.getInstance().getUid())
-                            .update("profile",uri.toString());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                Toast.makeText(getContext(), "Profile Picture Uploaded", Toast.LENGTH_SHORT).show();*/
-                //startActivity(new Intent(getContext(), MainActivity.class));
+
             })).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
@@ -182,7 +169,11 @@ public class ProfileFragment extends Fragment {
                 .update("name", name).addOnSuccessListener(aVoid -> {
             dialog.dismiss();
             Toast.makeText(getContext(), "Profile updated", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getContext(), MainActivity.class));
+            try {
+                startActivity(new Intent(getContext(), MainActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             getActivity().finish();
 
         }).addOnFailureListener(new OnFailureListener() {

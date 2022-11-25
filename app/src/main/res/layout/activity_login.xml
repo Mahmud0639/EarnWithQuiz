@@ -27,7 +27,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
 
                         <TextView
@@ -36,7 +36,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_20mdp"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="LOGIN"
+                            android:text="@string/login"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_32font_mdp"
                             app:layout_constraintBottom_toTopOf="@+id/loginIcon"
@@ -69,8 +69,8 @@
                             android:layout_marginTop="@dimen/_15mdp"
                             android:layout_marginEnd="@dimen/_10mdp"
                             android:background="@drawable/edit_box"
-                            android:hint="Email Address"
-                            android:drawableLeft="@drawable/emailfornew"
+                            android:hint="@string/email_address"
+                            android:drawableStart="@drawable/emailfornew"
                             android:drawablePadding="@dimen/_10mdp"
                             android:textColor="@color/white"
                             android:fontFamily="@font/roboto_light"
@@ -83,7 +83,9 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/loginIcon" />
+                            app:layout_constraintTop_toBottomOf="@+id/loginIcon"
+                            android:autofillHints=""
+                            tools:ignore="RtlSymmetry" />
 
                         <EditText
                             android:id="@+id/LogInPasswordBox"
@@ -95,7 +97,7 @@
                             android:padding="@dimen/_10mdp"
                             android:inputType="textPassword"
                             android:paddingStart="@dimen/_10mdp"
-                            android:drawableLeft="@drawable/passwordfornew"
+                            android:drawableStart="@drawable/passwordfornew"
                             android:drawablePadding="@dimen/_10mdp"
                             android:fontFamily="@font/roboto_light"
                             android:textColorHint="@color/hint_color"
@@ -105,7 +107,9 @@
                             app:layout_constraintEnd_toEndOf="@id/loginEmailBoxId"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="@id/loginEmailBoxId"
-                            app:layout_constraintTop_toBottomOf="@+id/loginEmailBoxId" />
+                            app:layout_constraintTop_toBottomOf="@+id/loginEmailBoxId"
+                            android:autofillHints=""
+                            tools:ignore="RtlSymmetry" />
 
                         <Button
                             android:id="@+id/loginId"
@@ -113,7 +117,7 @@
                             android:layout_height="@dimen/_38mdp"
                             android:layout_marginTop="@dimen/_25mdp"
                             android:background="@drawable/log_btn"
-                            android:text="Log In"
+                            android:text="@string/log_in"
                             android:textColor="@color/white"
                             app:layout_constraintEnd_toEndOf="@id/LogInPasswordBox"
                             app:layout_constraintHorizontal_bias="0.5"
@@ -130,13 +134,14 @@
                             android:layout_marginEnd="@dimen/_10mdp"
                             android:gravity="end"
                             android:layout_marginTop="@dimen/_8mdp"
-                            app:layout_constraintEnd_toEndOf="parent">
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:ignore="UseCompoundDrawables">
                                 <TextView
                                     android:id="@+id/createAnId"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto_bold"
-                                    android:text="Don't have an account?"
+                                    android:text="@string/don_t_have_an_account"
                                     android:layout_gravity="center"
                                     android:textAllCaps="false"
                                     android:textColor="@color/white"
@@ -147,7 +152,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:src="@drawable/ic_login_svg"/>
+                                    android:src="@drawable/ic_login_svg"
+                                    android:contentDescription="@string/todo" />
 
                         </LinearLayout>
 
@@ -155,7 +161,7 @@
                       <TextView
                           android:layout_width="wrap_content"
                           android:layout_height="wrap_content"
-                              android:text="Please Sign Up at first to continue."
+                              android:text="@string/please_sign_up_at_first_to_continue"
                               android:textColor="@color/white"
                               app:layout_constraintTop_toBottomOf="@id/linearLayoutForSignUp"
                               app:layout_constraintStart_toStartOf="parent"

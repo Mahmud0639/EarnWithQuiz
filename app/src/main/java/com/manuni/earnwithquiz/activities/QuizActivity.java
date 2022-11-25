@@ -155,7 +155,11 @@ public class QuizActivity extends AppCompatActivity {
 
 
         binding.quitBtn.setOnClickListener(v -> {
-            startActivity(new Intent(QuizActivity.this, MainActivity.class));
+            try {
+                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             finishAffinity();
         });
 
@@ -211,7 +215,11 @@ public class QuizActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                try {
+                    startActivity(new Intent(QuizActivity.this, MainActivity.class));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
 
             }
@@ -316,7 +324,11 @@ public class QuizActivity extends AppCompatActivity {
                     Intent intent = new Intent(QuizActivity.this, ResultScreenActivity.class);
                     intent.putExtra("correct", correctAnswers);
                     intent.putExtra("total", question.size());
-                    startActivity(intent);
+                    try {
+                        startActivity(intent);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     finish();
 
                 }

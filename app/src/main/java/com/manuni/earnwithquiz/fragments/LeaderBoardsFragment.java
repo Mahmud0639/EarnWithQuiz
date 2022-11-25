@@ -1,23 +1,21 @@
 package com.manuni.earnwithquiz.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.manuni.earnwithquiz.adapters.LeaderBoardAdapter;
-import com.manuni.earnwithquiz.models.User;
-import com.manuni.earnwithquiz.databinding.FragmentLeaderBoardsBinding;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.google.firebase.firestore.QuerySnapshot;
+import com.manuni.earnwithquiz.adapters.LeaderBoardAdapter;
+import com.manuni.earnwithquiz.databinding.FragmentLeaderBoardsBinding;
+import com.manuni.earnwithquiz.models.User;
 
 import java.util.ArrayList;
 
@@ -35,6 +33,7 @@ public class LeaderBoardsFragment extends Fragment {
 
     }
     FragmentLeaderBoardsBinding binding;
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,19 +50,16 @@ public class LeaderBoardsFragment extends Fragment {
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         database.collection("users")
-                .orderBy("coins", Query.Direction.DESCENDING).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (DocumentSnapshot snapshot: queryDocumentSnapshots){
-                    User user = snapshot.toObject(User.class);
-                    users.add(user);
-                }
-                binding.recyclerView.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
-                binding.recyclerView.hideShimmerAdapter();
+                .orderBy("coins", Query.Direction.DESCENDING).get().addOnSuccessListener(queryDocumentSnapshots -> {
+                    for (DocumentSnapshot snapshot: queryDocumentSnapshots){
+                        User user = snapshot.toObject(User.class);
+                        users.add(user);
+                    }
+                    binding.recyclerView.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                    binding.recyclerView.hideShimmerAdapter();
 
-            }
-        });
+                });
         return binding.getRoot();
     }
 }

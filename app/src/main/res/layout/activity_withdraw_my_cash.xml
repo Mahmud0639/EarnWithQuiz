@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20mdp"
-        android:text="টাকা উত্তোলন করুন"
+        android:text="@string/taka_uttolon_korun"
         android:textColor="@color/white"
         android:textSize="@dimen/_20font_mdp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
         android:layout_marginStart="@dimen/_10mdp"
         android:layout_marginTop="@dimen/_30mdp"
         android:layout_marginEnd="@dimen/_10mdp"
-        android:hint="Amount Taka"
+        android:hint="@string/amount_taka"
         android:background="@color/white"
         android:padding="@dimen/_8mdp"
         android:textColorHint="@android:color/darker_gray"
@@ -38,7 +38,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/takaUttolon"
         app:layout_constraintVertical_bias="0.16000003"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="RtlSymmetry" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton"
@@ -48,7 +49,7 @@
         android:layout_marginTop="@dimen/_20mdp"
         android:layout_marginEnd="@dimen/_10mdp"
         android:background="@drawable/got_it_btn_bg"
-        android:text="Cash Out"
+        android:text="@string/cash_out_for_bkash"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
