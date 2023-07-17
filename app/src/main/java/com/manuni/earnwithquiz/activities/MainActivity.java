@@ -1,5 +1,6 @@
 package com.manuni.earnwithquiz.activities;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,27 +12,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.manuni.earnwithquiz.adapters.CategoryAdapter;
+import com.manuni.UpdateActivity;
+import com.manuni.earnwithquiz.R;
+import com.manuni.earnwithquiz.databinding.ActivityMainBinding;
 import com.manuni.earnwithquiz.fragments.HomeFragment;
 import com.manuni.earnwithquiz.fragments.LeaderBoardsFragment;
 import com.manuni.earnwithquiz.fragments.ProfileFragment;
-import com.manuni.earnwithquiz.R;
 import com.manuni.earnwithquiz.fragments.WalletFragment;
-import com.manuni.earnwithquiz.databinding.ActivityMainBinding;
-import com.manuni.earnwithquiz.models.CategoryModel;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     FirebaseAuth auth;
+
 
 
     @Override
@@ -39,8 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
 
 
         MobileAds.initialize(this, initializationStatus -> {
@@ -127,10 +119,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+
+        if (item.getItemId()==R.id.card){
+            startActivity(new Intent(MainActivity.this,CardActivity.class));
+        }
+
         if (item.getItemId()==R.id.logout){
             auth.signOut();
             try {
-                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                startActivity(new Intent(MainActivity.this,SignUpActivity.class));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -151,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+        if (item.getItemId()==R.id.update){
+
+            startActivity(new Intent(MainActivity.this, UpdateActivity.class));
+
         }
         return super.onOptionsItemSelected(item);
     }

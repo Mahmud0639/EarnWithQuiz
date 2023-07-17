@@ -107,7 +107,15 @@ public class ProfileFragment extends Fragment {
                 e.printStackTrace();
             }
             binding.myName.setText(user.getName());
-            binding.adminMessageTxt.setText(user.getAdminMessage());
+
+            if (user.getAdminMessage().equals("")){
+                binding.adminMessage.setText("");
+            }else {
+                binding.adminMessage.setText("Admin Message");
+                binding.adminMessageTxt.setText(user.getAdminMessage());
+            }
+
+
 
         }).addOnFailureListener(e -> Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show());
 

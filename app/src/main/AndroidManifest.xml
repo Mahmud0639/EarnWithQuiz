@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
+            android:name=".activities.CardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.manuni.UpdateActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.WithdrawMyCashActivity"
             android:exported="false" />
         <activity
@@ -37,11 +43,8 @@
         <activity android:name=".activities.QuizActivity" />
         <activity
             android:name=".activities.SignUpActivity"
-            android:label="Sign Up"
-            android:theme="@style/full_screen_activity" />
-        <activity
-            android:name=".activities.LoginActivity"
             android:exported="true"
+            android:label="Sign Up"
             android:theme="@style/full_screen_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,6 +52,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:exported="true"
+            android:theme="@style/full_screen_activity"></activity>
         <activity
             android:name=".activities.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|keyboard"

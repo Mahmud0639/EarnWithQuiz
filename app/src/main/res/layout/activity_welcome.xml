@@ -51,6 +51,7 @@
                 android:text="@string/earn_with_learn"
                 android:textColor="@color/hint_color"
                 android:fontFamily="@font/roboto_medium"
+                android:visibility="invisible"
                 app:layout_constraintTop_toBottomOf="@id/welcomeTxt"
                 app:layout_constraintStart_toStartOf="@id/welcomeTxt"
                 app:layout_constraintEnd_toEndOf="@id/welcomeName"

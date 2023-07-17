@@ -148,6 +148,43 @@
         app:layout_constraintStart_toStartOf="@+id/paypalEmailBox"
         app:layout_constraintTop_toBottomOf="@+id/paypalEmailBox" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editTextPhone2"
+        app:layout_constraintStart_toStartOf="@id/editTextPhone2"
+        app:layout_constraintEnd_toEndOf="@id/editTextPhone2"
+        android:layout_marginTop="@dimen/_10mdp"
+        app:layout_constraintBottom_toTopOf="@id/sendRequest"
+        android:weightSum="2">
+        <TextView
+            android:id="@+id/mbCardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_style_copy"
+            android:text="MB Card"
+            android:gravity="center"
+            android:padding="@dimen/_5mdp"
+            android:layout_marginEnd="@dimen/_3mdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/minuteCardBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Minute Card"
+            android:gravity="center"
+            android:padding="@dimen/_5mdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="@dimen/_3mdp"
+            android:background="@drawable/btn_style_copy_another"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/sendRequest"
         android:layout_width="0dp"
@@ -157,10 +194,10 @@
         android:fontFamily="@font/roboto_bold"
         android:text="@string/send_request"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPhone2"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/editTextPhone2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2" />
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:layout_width="@dimen/_70mdp"

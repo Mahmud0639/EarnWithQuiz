@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.manuni.UpdateActivity">
+
+
+
+    <TextView
+        android:id="@+id/updateId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="অ্যাপটি আপডেট করতে কোন ধরনের সমস্যা হলে প্রথমে uninstall করুন, তার পরে আবার install করুন।"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_10mdp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        android:textSize="@dimen/_17font_mdp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/updateBtn"
+        android:layout_width="@dimen/_80mdp"
+        android:layout_height="@dimen/_30mdp"
+        app:layout_constraintTop_toBottomOf="@id/updateId"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Update"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:background="@drawable/update_btn"
+        android:textColor="@color/white"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

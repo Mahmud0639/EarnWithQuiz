@@ -161,12 +161,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                                         }
                                         break;
                                     }
-                                    default:
-                                        try {
-                                            Snackbar.make(v, "Your network is unknown", Snackbar.LENGTH_LONG).show();
-                                        } catch (Exception e) {
-                                            e.printStackTrace();
-                                        }
 
                                 }
                             }

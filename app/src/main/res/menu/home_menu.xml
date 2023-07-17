@@ -17,7 +17,16 @@
     <item android:id="@+id/refer"
         android:title="@string/refer_code_for_menu"
         app:showAsAction="never"/>
+
+      <item android:id="@+id/card"
+        android:title="Scratch Card"
+        app:showAsAction="never"/>
+
+
     <item android:id="@+id/rateApp"
         android:title="@string/rate_app_for_menu"
+        app:showAsAction="never"/>
+    <item android:id="@+id/update"
+        android:title="Update App"
         app:showAsAction="never"/>
 </menu>

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.SignUpActivity"
     android:background="@drawable/money1">
-    <View
+  <!--  <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -239,7 +239,68 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+    </ScrollView>-->
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E8151414"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+  <com.google.android.gms.common.SignInButton
+      android:id="@+id/googleSignInBtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:layout_marginTop="@dimen/_8mdp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/referBox" />
+
+  <EditText
+      android:id="@+id/bkashBox"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+   app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:background="@drawable/edit_box"
+    android:padding="@dimen/_7mdp"
+      android:textColor="@color/white"
+      android:layout_marginStart="@dimen/_20mdp"
+      android:layout_marginEnd="@dimen/_20mdp"
+      app:layout_constraintVertical_chainStyle="packed"
+      app:layout_constraintBottom_toTopOf="@id/referBox"
+      android:hint="Enter bKash number"
+      android:drawableStart="@drawable/bkash_24"
+      android:drawablePadding="@dimen/_5mdp"
+      android:textColorHint="@color/white"
+    android:layout_marginTop="@dimen/_5mdp"/>
+
+  <EditText
+      android:id="@+id/referBox"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/bkashBox"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:background="@drawable/edit_box"
+      android:padding="@dimen/_7mdp"
+      android:textColor="@color/white"
+      android:layout_marginStart="@dimen/_20mdp"
+      android:layout_marginEnd="@dimen/_20mdp"
+      android:hint="Enter refer code(optional)"
+      app:layout_constraintBottom_toTopOf="@id/googleSignInBtn"
+      android:drawableStart="@drawable/reffer_code"
+      android:drawableTint="@color/white"
+      android:drawablePadding="@dimen/_5mdp"
+      android:textColorHint="@color/white"
+      android:layout_marginTop="@dimen/_8mdp"/>
+
 
 
 
